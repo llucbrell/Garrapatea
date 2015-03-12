@@ -17,6 +17,9 @@
 <script src="libs/garrapatea/redibujacanvas.js"></script>
 <script src="libs/garrapatea/almacena.js"></script>
 <script src="libs/garrapatea/armadura.js"></script>
+<!--controls the onclick of every note and send it to the correct midi lib-->
+<script src="libs/garrapatea/sonido.js"></script>
+<script src="libs/garrapatea/loadaudio.js"></script>
 
 
 
@@ -80,7 +83,14 @@ canvas {
 
 </div>
 <div>
+
+<label>
+<input type="checkbox" name="sonido" id="sonido"> 
+sonido
+</label>
+
 <button id="1">+</button>
+
 <div>
 <form name="controles">
 <label class="radio" for="option1">
@@ -273,6 +283,7 @@ var canvas_x;
 //almacén de objetos (notas, claves, etc.,)
 var almacen=[];
 var contador=0;
+var arraymp3s=[];
 
 //control del tamaño del vex/vex stave size control
 var valinivexstave=-1;
@@ -286,7 +297,7 @@ var valinivexbar=0;
 var valaltvexbar=20;
 var valfinvexbar=38;
 
-
+var context = new AudioContext();
 
 
 //compás inicial para una mejor experiéncia UI 
@@ -297,7 +308,8 @@ nuevoCanvas();
 nuevaClave("treble", "c0");
 nuevoRitmo("6/8", "c1");
 nuevaBarra("2","c0")
-
+//usamos esta función para cargar el audio
+loadAudio();
 
 
 //ONCLICK LISTENERS

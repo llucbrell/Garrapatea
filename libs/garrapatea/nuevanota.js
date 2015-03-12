@@ -4,6 +4,7 @@ function nuevaNota(canvas_y, compasid){
 var nota;
 var figura; 
 var alteracionesChecked;
+var SoundChecked;
 var direccionplica= 1;    
 var nota2="g/4";
 var indice= compasid.slice(1);
@@ -23,6 +24,13 @@ var stavesel = new Vex.Flow.Stave(valinivexstave,valaltvexstave, valfinvexstave)
 
 
 
+//si está el sonido on... toca la nota
+
+SoundChecked=document.getElementById("sonido").checked;
+
+
+
+
 //comprobamos la duración que tiene la nota y le damos valor
 
 figura=document.querySelector('input[name="notas"]:checked').value;
@@ -35,8 +43,6 @@ alturaNota(canvas_y);
 
 //si son corcheas o más pequeñas
 if (figura>=8){
-  
-
 
  
 //comprobamos que la nota simple no tenga alteraciones
@@ -46,7 +52,7 @@ if (figura>=8){
       var Obnota={nombre:"nota", keys:nota, alteracion:accidenteSelected, duration:figura, stem_direction:direccionplica};
 
       almacena(Obnota, compasid);
-
+      playNote(Obnota, SoundChecked);
 
    }
    else{
@@ -54,6 +60,7 @@ if (figura>=8){
   var Obnota={nombre:"nota", keys:nota, alteracion:"natural", duration:figura, stem_direction:direccionplica};
   almacena(Obnota, compasid);
   dibujaNota(nota, figura);
+  playNote(Obnota, SoundChecked);
 }
 //averiguamos si las notas vecinas son también barrables
  for (i=+indice+1; i<almacen.length; ++i){
@@ -118,7 +125,7 @@ else{
       var Obnota={nombre:"nota", keys:nota, alteracion:accidenteSelected, duration:figura, stem_direction:direccionplica};
 
       almacena(Obnota, compasid);
-
+      playNote(Obnota, SoundChecked);
 
     }
 
@@ -130,6 +137,7 @@ else{
 //creamos y almacenamos la nota nueva creada al clickar
   var Obnota={nombre:"nota", alteracion:"natural", keys:nota, duration:figura, stem_direction:direccionplica};
   almacena(Obnota, compasid);
+  playNote(Obnota, SoundChecked);
    }
 //recuerda transformar las notas a otra clave cuando no sea la clave de sol
 //la que ha sido marcada 
@@ -164,7 +172,8 @@ else{
 notes.push(nota);
 }
 
-      }   
+     
+     }   
 
 
 
@@ -342,84 +351,87 @@ if (numeronotas===16){
 
 function alturaNota(canvas_y){ 
 
+
   //un pentagrama sencillo. Hay que mejorarlo con el pentagrama de piano
 
 
 
   //tesitura aguda
 if( canvas_y > 25 && canvas_y <32){
-  return nota="e/6", direccionplica= -1;
+   nota="e/6", direccionplica= -1;
 }
 if( canvas_y > 31 && canvas_y <38){
-  return nota="d/6", direccionplica= -1;
+   nota="d/6", direccionplica= -1;
 }
 if( canvas_y > 37 && canvas_y <45){
-  return nota="c/6", direccionplica= -1;
+   nota="c/6", direccionplica= -1;
 }
 if( canvas_y > 44 && canvas_y <49){
-  return nota="b/5", direccionplica= -1;
+   nota="b/5", direccionplica= -1;
 }
 if( canvas_y > 48 && canvas_y <54){
-  return nota="a/5", direccionplica= -1;
+   nota="a/5", direccionplica= -1;
 }
 if( canvas_y > 53 && canvas_y <59){
-  return nota="g/5", direccionplica= -1;
+   nota="g/5", direccionplica= -1;
 }
 if ( canvas_y > 58 && canvas_y< 64){
- return nota="f/5", direccionplica= -1;
+  nota="f/5", direccionplica= -1;
 }
 if ( canvas_y > 63 && canvas_y< 69){
- return nota="e/5", direccionplica= -1;
+  nota="e/5", direccionplica= -1;
 }
 if ( canvas_y > 68 && canvas_y< 74){
- return nota="d/5", direccionplica= -1;
+  nota="d/5", direccionplica= -1;
 }
 if ( canvas_y > 73 && canvas_y< 79){
- return nota="c/5", direccionplica= -1;
+  nota="c/5", direccionplica= -1;
 }
 //tesitura media
 if ( canvas_y > 78 && canvas_y< 84){
- return nota="b/4", direccionplica= -1;
+  nota="b/4", direccionplica= -1;
 }
 if ( canvas_y > 83 && canvas_y< 89){
- return nota="a/4";
+  nota="a/4";
 }
 if ( canvas_y > 88 && canvas_y< 94){
- return nota="g/4";
+  nota="g/4";
 }
 if ( canvas_y > 93 && canvas_y< 99){
- return nota="f/4";
+  nota="f/4";
 }
 if ( canvas_y > 98 && canvas_y< 104){
- return nota="e/4";
+ nota="e/4";
 }
 if ( canvas_y > 103 && canvas_y< 109){
- return nota="d/4";
+  nota="d/4";
 }
 if ( canvas_y > 108 && canvas_y< 114){
- return nota="c/4";
+  nota="c/4";
 }
 //tesitura grave
 if ( canvas_y > 113 && canvas_y< 119){
- return nota="b/3";
+  nota="b/3";
 }
 if ( canvas_y > 118 && canvas_y< 124){
- return nota="a/3";
+  nota="a/3";
 }
 if ( canvas_y > 123 && canvas_y< 129){
- return nota="g/3";
+  nota="g/3";
 }
 if ( canvas_y > 128 && canvas_y< 134){
- return nota="f/3";
+  nota="f/3";
 }
 if ( canvas_y >  133 && canvas_y< 139){
- return nota="e/3";
+  nota="e/3";
 }
 if ( canvas_y >  132 && canvas_y< 138){
- return nota="d/3";
+  nota="d/3";
 }
 
 
+//return the note for drawing
+return nota;
 }
 
 
