@@ -5,6 +5,7 @@ var nota;
 var figura; 
 var alteracionesChecked;
 var SoundChecked;
+var dotChecked;
 var direccionplica= 1;    
 var nota2="g/4";
 var indice= compasid.slice(1);
@@ -12,6 +13,7 @@ var indice= compasid.slice(1);
 var arraynotas=[];
 var arrayduracionnotas=[];
 var arraynotasalteradas=[];
+var arraydots=[];
 var iniciogruponotas;
 var fingruponotas=indice;
 //selección del compás
@@ -28,8 +30,8 @@ var stavesel = new Vex.Flow.Stave(valinivexstave,valaltvexstave, valfinvexstave)
 
 SoundChecked=document.getElementById("sonido").checked;
 
-
-
+//si hay puntillo
+dotChecked=document.getElementById("puntillo").checked;
 
 //comprobamos la duración que tiene la nota y le damos valor
 
@@ -49,19 +51,27 @@ if (figura>=8){
    if(alteracionesChecked===true){
     var accidenteSelected= document.querySelector('input[name="accidentes"]:checked').value;
       dibujaNotaAlterada(nota, figura, accidenteSelected);
+      if(dotChecked===true){
+      var Obnota={nombre:"nota", keys:nota, alteracion:accidenteSelected, duration:figura, stem_direction:direccionplica, dot:1};
+      }
+      else{
       var Obnota={nombre:"nota", keys:nota, alteracion:accidenteSelected, duration:figura, stem_direction:direccionplica};
-
+      }
       almacena(Obnota, compasid);
       playNote(Obnota, SoundChecked);
 
    }
    else{
-
-  var Obnota={nombre:"nota", keys:nota, alteracion:"natural", duration:figura, stem_direction:direccionplica};
+      if(dotChecked===true){
+  var Obnota={nombre:"nota", keys:nota, alteracion:"natural", duration:figura, stem_direction:direccionplica, dot:1};
+      }
+      else{
+  var Obnota={nombre:"nota", keys:nota, alteracion:"natural", duration:figura, stem_direction:direccionplica};     
+      }
   almacena(Obnota, compasid);
   dibujaNota(nota, figura);
   playNote(Obnota, SoundChecked);
-}
+  }
 //averiguamos si las notas vecinas son también barrables
  for (i=+indice+1; i<almacen.length; ++i){
    if (almacen[i]!=undefined && almacen[i].nombre!="silencio" && almacen[i].duration && almacen[i].duration>=8){
@@ -106,8 +116,12 @@ if (figura>=8){
         arraynotasalteradas[j]=almacen[i].alteracion;
         ++j;
      }
+      for (i=iniciogruponotas, j=0; i<=fingruponotas; i++){
+        arraydots[j]=almacen[i].dot;
+        ++j;
+     }
    // alert(arraynotas +"****"+ arraynotasalteradas);
-  dibujaGrupoNotas(iniciogruponotas,fingruponotas,arraynotas, arrayduracionnotas, arraynotasalteradas);
+  dibujaGrupoNotas(iniciogruponotas,fingruponotas,arraynotas, arrayduracionnotas, arraynotasalteradas, arraydots);
      }
 
 }
@@ -122,8 +136,12 @@ else{
       
     var accidenteSelected= document.querySelector('input[name="accidentes"]:checked').value;
       dibujaNotaAlterada(nota, figura, accidenteSelected);
-      var Obnota={nombre:"nota", keys:nota, alteracion:accidenteSelected, duration:figura, stem_direction:direccionplica};
-
+      if(dotChecked===true){
+      var Obnota={nombre:"nota", keys:nota, alteracion:accidenteSelected, duration:figura, stem_direction:direccionplica, dot:1};
+      }
+      else{
+      var Obnota={nombre:"nota", keys:nota, alteracion:accidenteSelected, duration:figura, stem_direction:direccionplica};  
+      }
       almacena(Obnota, compasid);
       playNote(Obnota, SoundChecked);
 
@@ -135,13 +153,20 @@ else{
 
 //llamamos a la función de pintado de notas
 //creamos y almacenamos la nota nueva creada al clickar
-  var Obnota={nombre:"nota", alteracion:"natural", keys:nota, duration:figura, stem_direction:direccionplica};
+   if(dotChecked===true){
+  var Obnota={nombre:"nota", alteracion:"natural", keys:nota, duration:figura, stem_direction:direccionplica, dot:1};
+  }
+   else{
+   var Obnota={nombre:"nota", alteracion:"natural", keys:nota, duration:figura, stem_direction:direccionplica}; 
+   }
   almacena(Obnota, compasid);
   playNote(Obnota, SoundChecked);
    }
 //recuerda transformar las notas a otra clave cuando no sea la clave de sol
 //la que ha sido marcada 
 //de momento utilizaremos sólo las notas en clave de sol
+
+
 }
 
 
@@ -149,7 +174,7 @@ else{
 //no deja un buen formato al mezclar notas alteradas y notas sin alterar
 //de momento lo dejo así, xq mientras sean pocas notas, las dibuja
 
- function dibujaGrupoNotas(iniciogruponotas,fingruponotas,arraynotas, arrayduracionnotas, arraynotasalteradas){
+ function dibujaGrupoNotas(iniciogruponotas,fingruponotas,arraynotas, arrayduracionnotas, arraynotasalteradas, arraydots){
 var i;
 var notes=[];
 var nota;
@@ -164,12 +189,24 @@ var aumentof=0;
 //si tiene alteración añadimos la nota alterada al array
 
 if(arraynotasalteradas[i]==="natural"){
+    if(arraydots[i]===1){
+ nota= new Vex.Flow.StaveNote({ keys:[arraynotas[i]] , stem_direction:direccionplica, duration: arrayduracionnotas[i] }).addDotToAll();
+ notes.push(nota);
+    }
+    else{
  nota= new Vex.Flow.StaveNote({ keys:[arraynotas[i]] , stem_direction:direccionplica, duration: arrayduracionnotas[i] });
  notes.push(nota);
+    }
 }
 else{
+   if(arraydots[i]===1){
+  nota= new Vex.Flow.StaveNote({ keys: [arraynotas[i]], stem_direction: direccionplica, duration: arrayduracionnotas[i] }).addAccidental(0, new Vex.Flow.Accidental(arraynotasalteradas[i])).addDotToAll();
+  notes.push(nota);
+   }
+   else{
   nota= new Vex.Flow.StaveNote({ keys: [arraynotas[i]], stem_direction: direccionplica, duration: arrayduracionnotas[i] }).addAccidental(0, new Vex.Flow.Accidental(arraynotasalteradas[i]));
-notes.push(nota);
+  notes.push(nota);
+   }
 }
 
      
@@ -438,10 +475,14 @@ return nota;
 
 function dibujaNota(nota, figura){
 
+if(dotChecked===true){
+  var notes = [  new Vex.Flow.StaveNote({ keys: [nota], stem_direction: direccionplica, duration: figura }).addDotToAll(),];
 
-var notes = [  new Vex.Flow.StaveNote({ keys: [nota], stem_direction: direccionplica, duration: figura }),];
+}
+else{
+  var notes = [  new Vex.Flow.StaveNote({ keys: [nota], stem_direction: direccionplica, duration: figura }),];
 
-
+}
 
 // Create a voice in 4/4 AQUÍ INTRODUCIMOS LA FUNCION DEL COMPAS..
 
@@ -519,10 +560,12 @@ var notaAccidental=nota;
 //object, pero parece que no... Hay que testearlo también en otros 
 //navegadores
 //var notaAccidental= nota[0]+accidenteSelected+nota[1]+nota[2];
-
+if(dotChecked===true){
+var notes = [  new Vex.Flow.StaveNote({ keys: [notaAccidental], stem_direction: direccionplica, duration: figura }).addAccidental(0, new Vex.Flow.Accidental(accidenteSelected)).addDotToAll(),];
+}
+else{
 var notes = [  new Vex.Flow.StaveNote({ keys: [notaAccidental], stem_direction: direccionplica, duration: figura }).addAccidental(0, new Vex.Flow.Accidental(accidenteSelected)),];
-
-
+}
 
 // Create a voice in 4/4 AQUÍ INTRODUCIMOS LA FUNCION DEL COMPAS..
 
