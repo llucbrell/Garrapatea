@@ -9,9 +9,17 @@ function playNote(Obnota, SoundChecked){
 	//the sound is off
 	else{
     var midinote= getMidiNoteNumber(Obnota);
+    console.log("livesound"+ livesound);
      // the MIDI note... aquí llamamos al reproductor
+     //si el reproductor es HTML5 o si por el contrario usamos webaudioAPI
+     if(livesound=="WebAPI"){ 
        ejecutaNota(midinote);
         }
+     if(livesound=="HTML5"){
+        ejecutaNotaHTML(midinote);
+     }   
+    }
+
 
      }      
 

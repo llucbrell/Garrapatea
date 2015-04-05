@@ -20,8 +20,8 @@
 <!--controls the onclick of every note and send it to the correct midi lib-->
 <script src="libs/garrapatea/sonido.js"></script>
 <script src="libs/garrapatea/loadaudio.js"></script>
-<script src="libs/garrapatea/browser.js"></script>
-
+<script src="libs/garrapatea/browsers.js"></script>
+<script src="libs/garrapatea/loadaudioie.js"></script>
 
 
 <style type="text/css">
@@ -299,8 +299,7 @@ var valaltvexbar=20;
 var valfinvexbar=38;
 //for audio playing
 var context;
-
-
+var livesound;
 
 //compás inicial para una mejor experiéncia UI 
 //se puede mejorar, colocar todo en una función a parte
@@ -321,26 +320,9 @@ $("#1").on("click", function(){
 });
 
 
-window.addEventListener('load', init, false);
+window.addEventListener('load', browserCatch, false);
 
 //audioSupport
-
-
-function init() {
-  try {
-    // Fix up for prefixing
-    window.AudioContext = window.AudioContext||window.webkitAudioContext;
-    AudioAPIS=true;
-    context = new AudioContext();
-    loadAudio();
-  }
-  catch(e) {
-  loadIEAudio();
-    alert('Web Audio API is not supported in this browser');
-    
-  }
-}
-
 
 
 
