@@ -20,6 +20,7 @@
 <!--controls the onclick of every note and send it to the correct midi lib-->
 <script src="libs/garrapatea/sonido.js"></script>
 <script src="libs/garrapatea/loadaudio.js"></script>
+<script src="libs/garrapatea/browser.js"></script>
 
 
 
@@ -85,7 +86,7 @@ canvas {
 <div>
 
 <label>
-<input type="checkbox" name="sonido" id="sonido"> 
+<input type="checkbox" name="sonido" id="sonido" checked="checked"> 
 sonido
 </label>
 
@@ -296,8 +297,9 @@ var valfinvexstave=39;
 var valinivexbar=0;
 var valaltvexbar=20;
 var valfinvexbar=38;
+//for audio playing
+var context;
 
-var context = new AudioContext();
 
 
 //compás inicial para una mejor experiéncia UI 
@@ -309,7 +311,7 @@ nuevaClave("treble", "c0");
 nuevoRitmo("6/8", "c1");
 nuevaBarra("2","c0")
 //usamos esta función para cargar el audio
-loadAudio();
+//loadAudio();
 
 
 //ONCLICK LISTENERS
@@ -318,6 +320,26 @@ $("#1").on("click", function(){
     nuevoCanvas();
 });
 
+
+window.addEventListener('load', init, false);
+
+//audioSupport
+
+
+function init() {
+  try {
+    // Fix up for prefixing
+    window.AudioContext = window.AudioContext||window.webkitAudioContext;
+    AudioAPIS=true;
+    context = new AudioContext();
+    loadAudio();
+  }
+  catch(e) {
+  loadIEAudio();
+    alert('Web Audio API is not supported in this browser');
+    
+  }
+}
 
 
 
@@ -333,7 +355,7 @@ $("#1").on("click", function(){
  
 </div>
 
-
+<div id="audio" style="visibility:hidden;"></div>
 
 </script>
 
