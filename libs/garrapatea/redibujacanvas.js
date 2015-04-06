@@ -23,3 +23,12 @@ ctxsel.clearRect(0, 0, ctxsel.canvas.width, ctxsel.canvas.height);
 
 almacen[i]=undefined;       
 }
+
+
+function borraCanvasDom(){
+   var div = document.getElementById("partitura");
+   var lastCanvas = div.lastChild;
+
+   div.removeChild(lastCanvas);
+
+}

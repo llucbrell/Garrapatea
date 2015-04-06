@@ -90,8 +90,8 @@ canvas {
 sonido
 </label>
 
-<button id="1">+</button>
-
+<button id="1" class="botones">+</button>
+<button id="2" class="botones">-</button>
 <div>
 <form name="controles">
 <label class="radio" for="option1">
@@ -321,6 +321,10 @@ nuevaBarra("2","c0")
 
 $("#1").on("click", function(){
     nuevoCanvas();
+});
+
+$("#2").on("click", function(){
+    borraCanvasDom();
 });
 
 
