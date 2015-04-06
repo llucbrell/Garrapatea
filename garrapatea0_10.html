@@ -17,6 +17,7 @@
 <script src="libs/garrapatea/redibujacanvas.js"></script>
 <script src="libs/garrapatea/almacena.js"></script>
 <script src="libs/garrapatea/armadura.js"></script>
+<script src="libs/garrapatea/imprimir.js"></script>
 <!--controls the onclick of every note and send it to the correct midi lib-->
 <script src="libs/garrapatea/sonido.js"></script>
 <script src="libs/garrapatea/loadaudio.js"></script>
@@ -92,6 +93,8 @@ sonido
 
 <button id="1" class="botones">+</button>
 <button id="2" class="botones">-</button>
+<button id="3" class="botones">Print</button>
+
 <div>
 <form name="controles">
 <label class="radio" for="option1">
@@ -327,6 +330,9 @@ $("#2").on("click", function(){
     borraCanvasDom();
 });
 
+$("#3").on("click", function(){
+    imprimirPartitura();
+});
 
 window.addEventListener('load', browserCatch, false);
 
