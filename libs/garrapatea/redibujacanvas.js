@@ -28,7 +28,7 @@ almacen[i]=undefined;
 function borraCanvasDom(){
    var div = document.getElementById("partitura");
    var lastCanvas = div.lastChild;
-
+   numerocompas= numerocompas-1;
    div.removeChild(lastCanvas);
 
 }
