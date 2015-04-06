@@ -18,6 +18,7 @@
 <script src="libs/garrapatea/almacena.js"></script>
 <script src="libs/garrapatea/armadura.js"></script>
 <script src="libs/garrapatea/imprimir.js"></script>
+<script src="libs/garrapatea/preview.js"></script>
 <!--controls the onclick of every note and send it to the correct midi lib-->
 <script src="libs/garrapatea/sonido.js"></script>
 <script src="libs/garrapatea/loadaudio.js"></script>
@@ -94,6 +95,7 @@ sonido
 <button id="1" class="botones">+</button>
 <button id="2" class="botones">-</button>
 <button id="3" class="botones">Print</button>
+<button id="4" class="botones">PNG</button>
 
 <div>
 <form name="controles">
@@ -278,8 +280,8 @@ brepend</label>
 </div><button id="clear">clear</button>
 -->
 
-
-
+<canvas id="preview"></canvas>
+<div id="visual"></div>
 
 <script type="text/javascript">
 
@@ -332,6 +334,10 @@ $("#2").on("click", function(){
 
 $("#3").on("click", function(){
     imprimirPartitura();
+});
+
+$("#4").on("click", function(){
+    muestraImagenPartitura();
 });
 
 window.addEventListener('load', browserCatch, false);
