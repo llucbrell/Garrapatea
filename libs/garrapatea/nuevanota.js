@@ -51,23 +51,13 @@ if (figura>=8){
    if(alteracionesChecked===true){
     var accidenteSelected= document.querySelector('input[name="accidentes"]:checked').value;
       dibujaNotaAlterada(nota, figura, accidenteSelected);
-      if(dotChecked===true){
-      var Obnota={nombre:"nota", keys:nota, alteracion:accidenteSelected, duration:figura, stem_direction:direccionplica, dot:1};
-      }
-      else{
-      var Obnota={nombre:"nota", keys:nota, alteracion:accidenteSelected, duration:figura, stem_direction:direccionplica};
-      }
+     var Obnota= createObnota();
       almacena(Obnota, compasid);
       playNote(Obnota, SoundChecked);
 
    }
    else{
-      if(dotChecked===true){
-  var Obnota={nombre:"nota", keys:nota, alteracion:"natural", duration:figura, stem_direction:direccionplica, dot:1};
-      }
-      else{
-  var Obnota={nombre:"nota", keys:nota, alteracion:"natural", duration:figura, stem_direction:direccionplica};     
-      }
+     var Obnota= createObnota();
   almacena(Obnota, compasid);
   dibujaNota(nota, figura);
   playNote(Obnota, SoundChecked);
@@ -136,12 +126,7 @@ else{
       
     var accidenteSelected= document.querySelector('input[name="accidentes"]:checked').value;
       dibujaNotaAlterada(nota, figura, accidenteSelected);
-      if(dotChecked===true){
-      var Obnota={nombre:"nota", keys:nota, alteracion:accidenteSelected, duration:figura, stem_direction:direccionplica, dot:1};
-      }
-      else{
-      var Obnota={nombre:"nota", keys:nota, alteracion:accidenteSelected, duration:figura, stem_direction:direccionplica};  
-      }
+      var Obnota=createObnota();
       almacena(Obnota, compasid);
       playNote(Obnota, SoundChecked);
 
@@ -153,12 +138,7 @@ else{
 
 //llamamos a la función de pintado de notas
 //creamos y almacenamos la nota nueva creada al clickar
-   if(dotChecked===true){
-  var Obnota={nombre:"nota", alteracion:"natural", keys:nota, duration:figura, stem_direction:direccionplica, dot:1};
-  }
-   else{
-   var Obnota={nombre:"nota", alteracion:"natural", keys:nota, duration:figura, stem_direction:direccionplica}; 
-   }
+  var Obnota= createObnota();
   almacena(Obnota, compasid);
   playNote(Obnota, SoundChecked);
    }
@@ -168,8 +148,55 @@ else{
 
 
 }
-
-
+//función para manejar mejor los objeto notas, que estaba muy liada la cosa
+function createObnota(){
+  
+    var Objeto={nombre:"nota", keys:nota, duration:figura, stem_direction:direccionplica};  
+    var accidenteSelected;
+    var dot;
+  if(alteracionesChecked===true)
+    {
+   accidenteSelected= document.querySelector('input[name="accidentes"]:checked').value;
+    }
+    else{
+  accidenteSelected="natural";
+    }
+  if(dotChecked===true){
+   dot=1;
+    }
+    else{
+    dot=0;
+    }
+    //recorremos el almacén en dirección negativa para comprobar si hay 
+    //armadura y también mediante el testArmadura si la nota está alterada
+    //var numerocomp= compasid[1];
+  
+var numero=parseInt(compasid.slice(1));//usamos el id de referncia
+console.log("id"+ numero);
+for (var q=numero; q>0; q--){
+        // recorremos el alamcen desde el compas marcado hacia el inicio
+        if(almacen[q] && almacen[q].nombre=="armadura"){
+          console.log("probamos en"+q);
+          console.log(nota);
+       alterada= testArmadura(nota, almacen[q]);
+       if(alterada==="b"){accidenteSelected="b"};
+       if(alterada==="#"){accidenteSelected="#"};
+       console.log(alterada);
+       break;//al localizar la armadura, si hay... se rompe el bucle
+       }//así evitamos los errores ante multiples armaduras
+}
+    //en un futuro hay que buscar una solución para no rliberar memoria aquí
+    //cada vez que clickamos recorremos el array... y es mucho
+    
+      
+      
+  
+    
+     
+  Objeto.alteracion=accidenteSelected;
+  Objeto.dot=dot;
+  return Objeto;
+}
 
 //no deja un buen formato al mezclar notas alteradas y notas sin alterar
 //de momento lo dejo así, xq mientras sean pocas notas, las dibuja

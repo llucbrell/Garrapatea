@@ -7,7 +7,7 @@ nuevoCompas(compasid);
 //borramos el objeto del almacen
  var indice=compasid.slice(1);
  var i= +indice;
- almacen[i]=undefined;
+ delete almacen[i];
 }
 
 
@@ -21,7 +21,7 @@ var canvas=document.getElementById(compasid);
 ctxsel.clearRect(0, 0, ctxsel.canvas.width, ctxsel.canvas.height); 
        nuevoCompas(compasid);
 
-almacen[i]=undefined;       
+delete almacen[i];       
 }
 
 

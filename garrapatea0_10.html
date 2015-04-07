@@ -19,11 +19,13 @@
 <script src="libs/garrapatea/armadura.js"></script>
 <script src="libs/garrapatea/imprimir.js"></script>
 <script src="libs/garrapatea/preview.js"></script>
-<!--controls the onclick of every note and send it to the correct midi lib-->
+<!--note control interface for send to the correct livesound API-->
 <script src="libs/garrapatea/sonido.js"></script>
 <script src="libs/garrapatea/loadaudio.js"></script>
 <script src="libs/garrapatea/browsers.js"></script>
 <script src="libs/garrapatea/loadaudioie.js"></script>
+<!--Midi transaltion library control-->
+<script src="libs/garrapatea/MidiSketch.js"></script>
 
 
 <style type="text/css">
@@ -96,6 +98,7 @@ sonido
 <button id="2" class="botones">-</button>
 <button id="3" class="botones">Print</button>
 <button id="4" class="botones">PNG</button>
+<button id="5" class="botones">Midi</button>
 
 <div>
 <form name="controles">
@@ -310,6 +313,11 @@ var valfinvexbar=38;
 var context;
 var livesound;
 
+//for midi file writting
+var midisketch= new MidiObject();
+var track= new MidiTrack();
+midisketch.setChunk();
+
 //compás inicial para una mejor experiéncia UI 
 //se puede mejorar, colocar todo en una función a parte
 
@@ -338,6 +346,10 @@ $("#3").on("click", function(){
 
 $("#4").on("click", function(){
     muestraImagenPartitura();
+});
+
+$("#5").on("click", function(){
+    aMidi(almacen);
 });
 
 window.addEventListener('load', browserCatch, false);

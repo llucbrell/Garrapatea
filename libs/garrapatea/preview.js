@@ -15,7 +15,7 @@ for (var i=0, x=0, y=0; i<numerocompas; i++, x=x+38){
  if(can2.width<x){
 
  	//can2.setAttribute('width', x);
-   can2.width= x;
+   can2.width= x+38;
      for (var j=0, q=0, k=0; j<numerocompas; j++, q=q+38){
       var can = document.getElementById('c'+j);
  // console.log(can);
