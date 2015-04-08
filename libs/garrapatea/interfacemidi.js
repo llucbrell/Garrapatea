@@ -7,7 +7,8 @@ function aMidi(arrayalmacen){
 //variables que nos ayudan en la construcción de los mensajes midi
 var silencio=false;
 var figurasilencio;
-
+//para saber si la nota anterior se tocaba al unísono
+//var lastId;
 
 //comprobamos que se pase el argumento almacen
 if (!arrayalmacen){
@@ -15,14 +16,19 @@ if (!arrayalmacen){
   throw console.log("no objects placed on to the sheet");
 }
 
-
-
+midisketch= new MidiObject();
+track= new MidiTrack();
 //recorremos el array almacén
+
+//OJO SI ENCOTRAMOS ARRAY DENTRO, NO LO LEE
+//don't read if there is an array inside arrayalmacen[i]
 for (var i=0; i<arrayalmacen.length; i++){
    switch (arrayalmacen[i] && arrayalmacen[i].nombre) {
       case 'nota':
         //enviamos el objeto al respectivo traductor
         midiNota(arrayalmacen[i]);
+        //almacenamos el id
+        lastId=i;
         break;
       case 'silencio':
       //almacenamos el silencio
@@ -40,6 +46,10 @@ for (var i=0; i<arrayalmacen.length; i++){
 function midiNota(objeto){
     var figura=objeto.duration;
     var deltasil="02";
+    var channel="01";
+    
+
+
     //comprobamos la duración de los objetos nota, del almacen
     console.log("dur"+objeto.duration);
 
@@ -60,16 +70,28 @@ function midiNota(objeto){
       var deltadecimal=dur+(dur/2);
       delta= deltadecimal.toString(16);
     }
-
+//si había un silencio antes usamos el delta de noteOn para dejar un tiempo el
+//reproductor sin sonar
     if(silencio===true){
       deltasil=figurasilencio;
       silencio=false;
     }
+    
+//para la polifonía usaremos la función channel de midi
+//cuando hay un array no lo lee..
+//arreglar en un futuro
+/*
+     if(lastId===id){
+      channel="02";
+      console.log("POLIFONIA");
+     }
+
+*/
 
     var nota=getMidiNoteNumber(objeto);//conseguimos el número de nota midi en decimal
     console.log("nota"+nota);
-    var notaOn= new MidiMessage("noteOn",nota, "47", deltasil);
-    var notaOff= new MidiMessage("noteOff", nota, "00", delta);
+    var notaOn= new MidiMessage("noteOn",nota, "47", deltasil, channel);
+    var notaOff= new MidiMessage("noteOff", nota, "00", delta, channel);
     
     track.addMessageToTrack(notaOn);
     track.addMessageToTrack(notaOff);
