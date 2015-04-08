@@ -33,7 +33,7 @@ if(dotchecked===true){
 almacena(Obsilencio, compasid);
 }
 else{
-var Obsilencio={nombre:"silencio", keys:nota, duration:figura, stem_direction:direccionplica, type:"r"};
+var Obsilencio={nombre:"silencio", keys:nota, duration:figura, stem_direction:direccionplica, type:"r", dot:0};
 almacena(Obsilencio, compasid);
 }
 

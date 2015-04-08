@@ -4,11 +4,18 @@
 
 
 function aMidi(arrayalmacen){
+//variables que nos ayudan en la construcción de los mensajes midi
+var silencio=false;
+var figurasilencio;
 
+
+//comprobamos que se pase el argumento almacen
 if (!arrayalmacen){
   alert("There is no possible midi translate");
   throw console.log("no objects placed on to the sheet");
 }
+
+
 
 //recorremos el array almacén
 for (var i=0; i<arrayalmacen.length; i++){
@@ -17,6 +24,9 @@ for (var i=0; i<arrayalmacen.length; i++){
         //enviamos el objeto al respectivo traductor
         midiNota(arrayalmacen[i]);
         break;
+      case 'silencio':
+      //almacenamos el silencio
+        midiSilencio(arrayalmacen[i]);
       case 'ritmo':
       //pintamos
       case 'clave':
@@ -25,17 +35,11 @@ for (var i=0; i<arrayalmacen.length; i++){
 
 
 }
-var fin=new MidiMessage("endTrack");
-midisketch.setChunk();
-console.log("endTrack");
-track.addMessageToTrack(fin);//añadimos el mensaje que cierra
-midisketch.addTrack(track);
-
-}
 
 
 function midiNota(objeto){
     var figura=objeto.duration;
+    var deltasil="02";
     //comprobamos la duración de los objetos nota, del almacen
     console.log("dur"+objeto.duration);
 
@@ -57,13 +61,57 @@ function midiNota(objeto){
       delta= deltadecimal.toString(16);
     }
 
+    if(silencio===true){
+      deltasil=figurasilencio;
+      silencio=false;
+    }
+
     var nota=getMidiNoteNumber(objeto);//conseguimos el número de nota midi en decimal
     console.log("nota"+nota);
-    var notaOn= new MidiMessage("noteOn",nota, "47");
+    var notaOn= new MidiMessage("noteOn",nota, "47", deltasil);
     var notaOff= new MidiMessage("noteOff", nota, "00", delta);
     
     track.addMessageToTrack(notaOn);
     track.addMessageToTrack(notaOff);
+
+}
+
+function midiSilencio(objeto){
+   silencio=true;
+//marcamos un silencio con true
+   var figur=objeto.duration;
+   
+   //variables para el cálculo del delta
+
+    if (figur==="1"){figurasilencio="80"};
+    if (figur==="2"){figurasilencio="40"};
+    if (figur==="4"){figurasilencio="20"};
+    if (figur==="8"){figurasilencio="10"};
+    if (figur==="16"){figurasilencio="08"};
+    if (figur==="32"){figurasilencio="04"};
+    if (figur==="64"){figurasilencio="02"};
+    if (figur==="128"){figurasilencio="01"};
+
+//realizamos la misma operación para calcular el delta del silencio con puntillo
+    if(objeto.dot===1){
+      var duri=parseInt(delta, 16);
+      var duridecimal=dur+(dur/2);
+      figurasilencio= duridecimal.toString(16);
+    }
+
+
+
+}
+
+
+
+
+//completamos el midiobjeto, dandole el formato correcto
+var fin=new MidiMessage("endTrack");
+midisketch.setChunk();
+console.log("endTrack");
+track.addMessageToTrack(fin);//añadimos el mensaje que cierra
+midisketch.addTrack(track);
 
 }
 
