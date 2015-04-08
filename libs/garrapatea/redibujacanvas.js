@@ -30,5 +30,6 @@ function borraCanvasDom(){
    var lastCanvas = div.lastChild;
    numerocompas= numerocompas-1;
    div.removeChild(lastCanvas);
-
+   delete almacen[numerocompas];
+   //testear mañana
 }

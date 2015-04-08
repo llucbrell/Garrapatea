@@ -38,6 +38,7 @@ function midiNota(objeto){
     var figura=objeto.duration;
     //comprobamos la duración de los objetos nota, del almacen
     console.log("dur"+objeto.duration);
+
     if (figura==="1"){delta="80"};
     if (figura==="2"){delta="40"};
     if (figura==="4"){delta="20"};
@@ -46,6 +47,15 @@ function midiNota(objeto){
     if (figura==="32"){delta="04"};
     if (figura==="64"){delta="02"};
     if (figura==="128"){delta="01"};
+
+//para quando usemos tresillo
+   //  if(objeto.tresillo===1){delta=(parseInt(delta)*2)/3};
+//puntillo
+    if(objeto.dot===1){
+      var dur=parseInt(delta, 16);
+      var deltadecimal=dur+(dur/2);
+      delta= deltadecimal.toString(16);
+    }
 
     var nota=getMidiNoteNumber(objeto);//conseguimos el número de nota midi en decimal
     console.log("nota"+nota);
