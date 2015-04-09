@@ -27,6 +27,7 @@
 <!--Midi transaltion library control-->
 <script src="libs/garrapatea/MidiSketch.js"></script>
 <script src="libs/garrapatea/interfacemidi.js"></script>
+<script src="libs/garrapatea/descarga.js"></script>
 
 
 <style type="text/css">
@@ -80,7 +81,7 @@ canvas {
 <header>
 <h1>Garrapatea</h1> 
 </header>
-<h2 contenteditable="true">Titulo</h2> 
+<h2 contenteditable="true" id="titulo">Titulo</h2> 
 <div id="partitura">
   <!--
 <canvas width="1" height="150" id="b0" class="barra"></canvas>podemos usar un sistema de barrado para formatear todo mejor -->
@@ -100,6 +101,8 @@ sonido
 <button id="3" class="botones">Print</button>
 <button id="4" class="botones">PNG</button>
 <button id="5" class="botones">Midi</button>
+<button id="guardar" class="botones">Midi</button>
+
 
 <div>
 <form name="controles">
@@ -373,7 +376,7 @@ window.addEventListener('load', browserCatch, false);
 </div>
 
 <div id="audio" style="visibility:hidden;"></div>
-
+<div id="miditexto"></canvas>
 </script>
 
 </body>

@@ -320,6 +320,23 @@ function MidiSketch(command, SketchObject){
        }
 
     }
+
+    if(command==="binario"){
+      if(SketchObject instanceof MidiObject){
+        var hexadecimal= midisktech.toUppercase();
+         return hexadecimal.toString(2); //pasa a binario
+
+         //podemos probar tambien toString(64);
+
+
+
+      }
+      else{
+        console.log("to write midiFiles this library needs a complete MidiObject");
+      }   
+
+
+    }
   }  
 
 

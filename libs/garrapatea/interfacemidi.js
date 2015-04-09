@@ -279,7 +279,12 @@ midisketch.setChunk();
 console.log("endTrack");
 track.addMessageToTrack(fin);//añadimos el mensaje que cierra
 midisketch.addTrack(track);
-
+var texto= MidiSketch("write", midisketch);
+console.log("texto"+texto);//escribimos midisketch
+var preview= document.getElementById("miditexto");
+preview.innerHTML=texto;
+//se envía el hexadecimal para ser descargado
+descargaMidi(texto);
 }
 
 
