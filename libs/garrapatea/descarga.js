@@ -41,7 +41,7 @@ for (var x = 0; x < byteArray.length; x++){
     //solución motores webkit
     // Chrome allows the link to be clicked
     // without actually adding it to the DOM.
-    downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob.toString(16));
+    downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
   }
   else
   {
