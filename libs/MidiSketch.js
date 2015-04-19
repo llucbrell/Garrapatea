@@ -390,8 +390,3 @@ function MidiSketch(command, SketchObject){
 
 
   }
-
-
-
-
-

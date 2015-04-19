@@ -280,14 +280,17 @@ console.log("endTrack");
 track.addMessageToTrack(fin);//añadimos el mensaje que cierra
 midisketch.addTrack(track);
 
-//se envía el objeto midi para ser transformado y descargado
+
+}
+
+function aFile(){
+
+  //se envía el objeto midi para ser transformado y descargado
 //se añade el nombre del archivo
 var filename= $("#titulo").html();
 
 MidiToBinarySketch(midisketch, filename);
 //descargaMidi(texto);
 }
-
-
 
 

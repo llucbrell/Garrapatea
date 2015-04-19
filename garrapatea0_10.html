@@ -27,6 +27,12 @@
 <!--Midi transaltion library control-->
 <script src="libs/MidiSketch.js"></script>
 <script src="libs/garrapatea/interfacemidi.js"></script>
+<!--Midi online reproduction library control-->
+<script src="libs/garrapatea/leemidi.js"></script>
+<script src="libs/garrapatea/synth.js"></script>
+<script src="libs/garrapatea/audio.js"></script>
+<script src="libs/garrapatea/replayer.js"></script>
+<script src="libs/garrapatea/playonflight.js"></script>
 
 
 <style type="text/css">
@@ -100,7 +106,7 @@ sonido
 <button id="3" class="botones">Print</button>
 <button id="4" class="botones">PNG</button>
 <button id="5" class="botones">Midi</button>
-<button id="guardar" class="botones">Midi</button>
+<button id="6" class="botones">Play</button>
 
 
 <div>
@@ -353,7 +359,15 @@ $("#4").on("click", function(){
 
 $("#5").on("click", function(){
     aMidi(almacen);
+    aFile();
 });
+
+$("#6").on("click", function(){
+    aMidi(almacen);
+    aReproducir(midisketch);      
+});
+
+
 
 window.addEventListener('load', browserCatch, false);
 
