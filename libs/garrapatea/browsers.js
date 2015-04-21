@@ -6,7 +6,7 @@ function browserCatch() {
   var audioHTML=false;
   //test the browser audio support
  trySound();
-
+ tryJasmid();
 
 function trySound(){
   tryAPIsound();
@@ -51,6 +51,30 @@ else{
 
 }
 
+
+
+function tryJasmid(){
+
+    //test for the navigator agent to apply different sintax
+        var ie = navigator.userAgent.match(/MSIE\s([\d.]+)/),
+        ie11 = navigator.userAgent.match(/Trident\/7.0/) && navigator.userAgent.match(/rv:11/),
+        ieVer=(ie ? ie[1] : (ie11 ? 11 : -1));
+
+            if (ie && ieVer<10) {//IE older versions
+             jamid=false;
+              return;
+             }
+
+
+              if (ie || ie11 || ieVer>11) {
+              jasmid=false; //IE new versions
+
+             } 
+             else {
+              jasmid=true;
+             }
+
+}
 
 }
 

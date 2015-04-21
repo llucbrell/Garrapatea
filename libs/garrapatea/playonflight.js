@@ -34,6 +34,18 @@ THE SOFTWARE.
 
 
 function  aReproducir(SketchObject) {
+
+  if (jasmid===true){
+        aJasmid();
+
+    }
+  else {
+       aBgSound();
+  }
+  }
+   
+
+  function aJasmid(){
   var reader= new FileReader();
   var textToWrite= MidiSketch("write", midisketch);
 //create an unsigned array
@@ -55,11 +67,107 @@ function  aReproducir(SketchObject) {
          replayer = Replayer(midiFile, synth);
          audio = AudioPlayer(replayer);
       }   
-            
+            }
+      
+
+
+   function aBgSound (argument) {
+
+      alert("This feature still not working. I'm trying to get a good online midi support for Internet Explorer. You can download the midi file and reproduce it with your desktop midi app. Sorry to bother you.");
+
+
+
+   }
+
+
+
+   /*
+var textToWrite= MidiSketch("write", midisketch);
+
+
+
+
+
+var reader= new FileReader();
+ var byteArray = new Uint8Array(textToWrite.length/2);
+
+
+      //translate the string to binary
+      for (var x = 0; x < byteArray.length; x++){
+         byteArray[x] = parseInt(textToWrite.substr(x*2,2), 16);
+         }
+//binary to blob object
+ var textFileAsBlob = new Blob([byteArray], {type: "application/octet-stream"});
+       //use reader to parse the blob to the jasmid library
+         //  reader.readAsBinaryString(textFileAsBlob);
+          
+//var stream= textFileAsBlob.DetachStream;
+          //reader function onload //when all file its loaded
+          //add control load in the future
+   reader.onloadend = function(e){
+         midiFile = MidiFile(reader.result);
+         synth = Synth(44100);
+         replayer = Replayer(midiFile, synth);
+         audio = AudioPlayer(replayer);
+      }   
+
+   //var blob= URL.createObjectURL(textFileAsBlob)
+reader.readAsDataURL(textFileAsBlob);
+console.log("url"+reader.result);
+//reader.readAsBlob(textFileAsBlob);
+//readAsBlob(stream); 
+// reader.readAsBinaryString(textFileAsBlob);
+
+}*/
+    
+       //use reader to parse the blob to the jasmid library
+       // reader.readAsArrayBuffer(textFileAsBlob);// problem with jasmid
+        //reader.readAsDataURL(textFileAsBlob);// the same but no midi recognition
+      // reader.readAsArrayBuffer(textFileAsBlob); 
+       //  reader.readAsDataURL(textFileAsBlob);
+          //reader function onload //when all file its loaded
+          //add control load in the future
+  //reader.readAsBinaryString(textFileAsBlob);//not supported
+// reader.readAsText(textFileAsBlob);
+
+
+
+/*
+
+var binary = "";
+var bytes = new Uint8Array(textToWrite.length/2);
+var length = bytes.byteLength;
+for (var i = 0; i < length; i++) {
+  binary += parseInt(textToWrite.substr(i*2,2), 16);
+}
+console.log("binary"+binary);
+reader.readAsArrayBuffer(binary);
+
+   reader.onload = function(e){
+        midiFile = MidiFile(reader.result.toString(2));
+         synth = Synth(44100);
+         replayer = Replayer(midiFile, synth);
+         audio = AudioPlayer(replayer);
+*/
+/*var iemidi= document.getElementById("explorermiditag");
+
+//iemidi.innerHTML= "<BGSOUND id=\"BGSOUND_ID\" LOOP=1 SRC=\"\" type=\"audio/midi\">"
+
+//BGSOUND_ID.src= reader.result;
+//BGSOUND_ID.src= window.URL.createObjectURL(reader.result);
+iemidi.innerHTML="<bgsound id=\"midisound\"  loop=1  src=\"\"></embed>";
+var midisound= document.getElementById("midisound");
+    midisound.src= reader.result.toString(2);
+  */    
+
+
+//midi IE support
+//get the div and insert the bgsound.. works only in explorer
+
            
           
   
-}
+
 
 
 
