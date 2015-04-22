@@ -160,17 +160,20 @@ MidiTrack.prototype.addMessageToTrack= function (MidiMessage){
  //check the events length and give a correct format in hex
        if(_tracklengthNum>-1 && _tracklengthNum<16){
         _ceros="0000000";
-        console.log("1 "+ this.track_length);
+        console.log("1 "+ this.track_length+"X"+_tracklengthNum);
       }
        if(_tracklengthNum>15 && _tracklengthNum<256){
         _ceros="000000";
          console.log("2 "+ this.track_length);
       } 
-       if(_tracklengthNum>256){
+       if(_tracklengthNum>255 && _tracklengthNum<4096){
         _ceros="00000";
          console.log("3 "+ this.track_length);
       }
-
+      if(_tracklengthNum>4095){
+        _ceros="0000";
+         console.log("4"+ this.track_length);
+      }
 
 
        this.track_length=_ceros +_tracklengthNum.toString(16);
