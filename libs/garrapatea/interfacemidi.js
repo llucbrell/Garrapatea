@@ -58,10 +58,10 @@ function midiNota(objeto){
     //comprobamos la duración de los objetos nota, del almacen
     console.log("dur"+objeto.duration);
 
-    if (figura==="1"){delta="80"};
-    if (figura==="2"){delta="40"};
-    if (figura==="4"){delta="20"};
-    if (figura==="8"){delta="10"};
+    if (figura==="1"){delta="50"};
+    if (figura==="2"){delta="28"};
+    if (figura==="4"){delta="14"};
+    if (figura==="8"){delta="0a"};
     if (figura==="16"){delta="08"};
     if (figura==="32"){delta="04"};
     if (figura==="64"){delta="02"};
