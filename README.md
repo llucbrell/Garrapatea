@@ -27,4 +27,5 @@ Basic midi integration, users can download the music in the standard midi format
 
 ##Bemoles compatibility
 
-You can also create sheets or midi files that "bemoles" library will show later on your web. Music writting with midi sound after one click. 
+You can also create sheets or midi files that "bemoles" library will show later on your web. An image of music writting with midi reproduction after click on it.
+Everything using only HTML5, CSS and javascript, no server side. 
