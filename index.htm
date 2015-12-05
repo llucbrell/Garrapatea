@@ -1,0 +1,538 @@
+<!--Bemoles.. 
+Web construida con Bootstrap por economía en factor tiempo
+Web build with bootstrap for saving time.-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+
+
+    <title>Garrapatea.JS</title>
+
+    <!-- Bootstrap core CSS -->
+    <link  rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/jumbotron-narrow.css" type="text/css" rel="stylesheet">
+    <!--jquery and bootstrap usually place it in before the close
+    body tag
+
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    -->
+
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+  
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+     <link  rel="stylesheet" href="css/garrapatea.css" type="text/css">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header">
+        <header class="Gheader">
+          <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Menu</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+           <h3 id="garrapatea" class="text-muted text-left">Garrapatea.JS </h3>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="editor/garrapateaeditor.htm">Write</a></li>
+            <li><a href="https://github.com/llucbrell/Garrapatea">GitHub</a></li>
+            <li><a href="Gdoc.htm">Documentation</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+<!--DESMARCAMOS LA ANTIGUA NAV
+        <nav>
+          <ul class="nav nav-tabs">
+            <li role="presentation" class="active"><a href="#">Home</a></li>
+            <li role="presentation"><a href="#">GitHub</a></li>
+            <li role="presentation"><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted text-right">Garrapatea.JS</h3>-->
+        </header>
+      </div>
+
+      <div id="publi" class="jumbotron">
+ <!--       <img src="imagenes/img_sheet.jpg" class="img-responsive">-->
+        <h1 class="text-center">JavaScript Online Score Editor</h1>
+        <p class="lead">Garrapatea is a JavaScript Score Editor. You can use it for create sheet music or as a code library to innsert it in your website.</p>
+        <p><a class="btn btn-lg btn-success" id="try" href="./editor/garrapateaeditor.htm" role="button">Try it!</a></p>
+      </div>
+
+     
+      <div class="container">        
+        <section class="features row">
+          <article class="col-xs-12 col-sm-4">
+          <h4 class="text-center"><span class="glyphicon glyphicon-headphones" aria-hidden="true"></span> Midi</h4>
+          <p>Garrapate can generate a simple Midi File to download. You can use it later, for being reproduced into a Piano Midi, or another Midi Synth device or software.</p><a href="https://en.wikipedia.org/wiki/MIDI"><small>More about Midi</small></a>
+          </article>
+          <article class="col-xs-12 col-sm-4">
+          <h4 class="text-center"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> PNG Images</h4>
+          <p>Use it for create a PNG Image from the sheet and add it in your projects. Use it with bemoles.JS library for a complete insertion in a web or blog site, image and sound.</p><a href="https://en.wikipedia.org/wiki/Portable_Network_Graphics"><small>More about PNG</small></a>
+          </article>
+          <article class="col-xs-12 col-sm-4">
+          <h4 class="text-center"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print</h4>
+          <p>Garrapatea can print the sheet music you created, using your local pdf printer software, for a better print control.</p><a href="http://en.wikipedia.org/wiki/Portable_Document_Format"><small>More about PDF</small></a>
+          </article>
+        </section>
+      </div> <!-- /container -->
+
+       <div class="container-fluid">
+        <article id="htmlcode" class="jumbotron">
+        <h2>Quick integration on your web site</h2>
+        <p class="lead">Link to the JSlibrary and push it with one line of JavaScript code.</p>
+        <p><pre>
+&ltscript type="text/javascript" src="GarrapateaLibraryPath"&gt&lt/script&gt   
+&ltscript type="text/javascript&gt garrapatea("Your_Div_Id");&lt/script&gt
+</pre></p>
+        </article>
+        </div><!-- /container -->
+
+
+
+        <div class="container"> 
+        <h2 class="text-center">Libraries</h2>
+        <section class="building row">
+          <article class="col-xs-12 col-sm-4">
+          <h4>Vex-Flow <small><a href="http://www.vexflow.com/docs/tutorial.html">More About Vex-Flow</a></small></h4>
+          <p>This is the core drawing library. Wich is in charge of paint all notes, doing things pretty good.</p>
+          </article>
+          <article class="col-xs-12 col-sm-4">
+          <h4>MidiSketch <small><a href="https://github.com/llucbrell/MidiSketch">MidiSketch on GitHub</a></small></h4>
+          <p>A simple javaScript library for creating midi files in the easy way</p>
+          </article>
+          <article class="col-xs-12 col-sm-4">
+          <h4>Jasmid <small><a href="https://github.com/gasman/jasmid">Jasmid on GitHub</a></small></h4>
+          <p>A lightweight JavaScript midi syth, for playing accurately from your sheet to your ears.</p>
+          </article>
+        </section>
+       </div> <!-- /container -->
+
+        <div class="container-fluid">
+        <article id="csscode" class="jumbotron">
+        <h2>Change the look of Garrapatea</h2>
+        <p class="lead">Using only CSS.</p><small><a href="Gdoc.htm#estilos"> Garrapatea Style Sheet docs</a></small>
+        </article>
+       
+        </div>
+
+
+<!--radio buttons bootstrap-->
+<div class="container">
+   <section class="building row">
+    <article class="col-xs-12 col-sm-6">
+      <br>
+      <br>
+      <br>
+    <div class="btn-group" data-toggle="buttons">
+
+        <label class="btn btn-default active" id="option1">
+
+            <input  type="radio" name="options"  > Option 1
+
+        </label>
+
+        <label class="btn btn-success"  id="option2">
+
+            <input  type="radio" name="options" > Option 2
+
+        </label>
+
+        <label class="btn btn-primary" id="option3">
+
+            <input type="radio" name="options"> Option 3
+
+        </label>
+
+    </div>
+    </article>
+   
+
+  
+
+
+    <article class="col-xs-12 col-sm-6">
+<div id="fondo">
+    <!--canvas de garrapatea con unos compases que cambian de color-->
+<div id="garrapatea">
+
+<div id="partitura">
+  <!--
+<canvas width="1" height="150" id="b0" class="barra"></canvas>podemos usar un sistema de barrado para formatear todo mejor -->
+
+
+
+</div></div>
+<div class="hidden">
+<button id="1">+</button>
+<div>
+<form name="controles">
+<label class="radio" for="option1">
+
+  <input type="radio" name="radioButtons" id="option1" value="notas" checked="checked">
+
+  Notas
+  
+</label>
+
+<label class="radio" for="option2">
+
+  <input type="radio" name="radioButtons" id="option2" value="claves" >
+
+  Claves
+ 
+</label>
+  
+  <label class="radio" for="option3">
+
+  <input type="radio" name="radioButtons" id="option3" value="ritmos" >
+
+  Ritmos
+
+</label>
+
+<label class="radio" for="option4">
+
+  <input type="radio" name="radioButtons" id="option4" value="silencios" >
+
+  Silencios
+
+</label>
+
+<label class="radio" for="option5">
+
+  <input type="radio" name="radioButtons" id="option5" value="barra" >
+
+  Barrado
+
+</label>
+
+<label>
+  
+  <input type="radio" name="radioButtons" id="armadura" value="armadura"> 
+
+  Armadura
+
+</label>
+
+
+<label>
+  
+  <input type="checkbox" name="alteraciones" id="alteraciones"> 
+
+  Alteraciones
+
+</label>
+
+
+
+</form>
+</div>
+
+<div id="desplegable">
+<form id="notasform">
+<label class="radio2" for="redonda">
+<input type="radio" name="notas" id="redonda" value="1">
+redonda</label>
+<label class="radio2" for="blanca">
+<input type="radio" name="notas" id="blanca" value="2" checked="checked">blanca</label>
+<label class="radio2" for="negra">
+<input type="radio" name="notas" id="negra" value="4">
+negra</label>
+<label class="radio2" for="corchea">
+<input type="radio" name="notas" id="corchea" value="8">
+corchea</label>
+<label class="radio2" for="semicorchea">
+<input type="radio" name="notas" id="semicorchea" value="16">
+semicorche</label>
+<label class="radio2" for="fusa">
+<input type="radio" name="notas" id="fusa" value="32">
+fusa</label>
+<label class="radio2" for="semifusa">
+<input type="radio" name="notas" id="semifusa" value="64">
+semifusa</label>
+<label class="radio2" for="garrapatea">
+<input type="radio" name="notas" id="garrapatea" value="128">
+garrapatea</label>
+</form>
+
+
+<form id="accidentesform">
+<label class="radio6" for="becuadro">
+<input type="radio" name="accidentes" id="becuadro" value="n" checked="checked">
+becuadr</label>
+<label class="radio6" for="sostenido">
+<input type="radio" name="accidentes" id="sostenido" value="#">
+sostenido</label>
+<label class="radio6" for="bemol">
+<input type="radio" name="accidentes" id="bemol" value="b">
+bemol</label>
+<label class="radio6" for="dsostenido">
+<input type="radio" name="accidentes" id="dsostenido" value="##">
+dsostenido</label>
+<label class="radio6" for="dbemol">
+<input type="radio" name="accidentes" id="dbemol" value="bb">
+dbemol</label>
+</form>
+
+
+
+<label class="agruparadios" for="option2">
+<form id="clavesform">
+<label class="radio4" for="clavesol">
+<input type="radio" name="claves" id="clavesol" value="treble" checked="checked">
+sol2</label>
+<label class="radio4" for="clavefa">
+<input type="radio" name="claves" id="clavefa" value="bass">
+fa4</label>
+<label class="radio4" for="clavedo">
+<input type="radio" name="claves" id="clavedo" value="alto">
+do3</label>
+</form></label>
+
+
+
+<label class="agruparadios" for="option3">
+<form id="ritmosform">
+<label class="radio3" for="2/4">
+<input type="radio" name="ritmos" id="2/4" value="2/4">
+2/4</label>
+<label class="radio3" for="3/4">
+ <input type="radio" name="ritmos" id="3/4" value="3/4" checked="checked">
+3/4</label>
+<label class="radio3" for="4/4">
+ <input type="radio" name="ritmos" id="4/4" value="4/4">
+4/4</label>
+<label class="radio3" for="6/8">
+ <input type="radio" name="ritmos" id="6/8" value="6/8">
+6/8</label>
+<label class="radio3" for="9/8">
+ <input type="radio" name="ritmos" id="9/8" value="9/8">
+9/8</label>
+<label class="radio3" for="12/8">
+ <input type="radio" name="ritmos" id="12/8" value="12/8">
+12/8</label>
+</form></label>
+
+
+<label class="agruparadios" for="option5">
+<form id="barrasform">
+<label class="radio5" for="barranormal">
+<input type="radio" name="barras" id="barranormal" value="barranormal" checked="checked">
+bnormal</label>
+<label class="radio5" for="barradoble">
+ <input type="radio" name="barras" id="barradoble" value="barradoble">
+bdoble</label>
+<label class="radio5" for="barrafinal">
+ <input type="radio" name="barras" id="barrafinal" value="barrafinal">
+bfinal</label>
+<label class="radio5" for="barrarepeticionprin">
+ <input type="radio" name="barras" id="barrarepeticionprin" value="barrarepeticionprin">
+brepini</label>
+<label class="radio5" for="barrarepeticionend">
+ <input type="radio" name="barras" id="barrarepeticionend" value="barrarepeticionend">
+brepend</label>
+</form>
+</label> 
+
+
+</div>
+
+</div>
+
+<!--END OF GARRAPATEA-->
+<p><small class="Click">Click on the sheet and add more notes</small></p>
+</article>
+ </section>
+   
+
+</div><!-- /container -->
+
+
+
+    
+        <div class="container">
+        <section class="Bemoles row text-center">
+        <article class="col-xs-12"> 
+          <h3>Because it's still Beta</h3>
+          <h4>Working on..</h4>
+          
+          <p> Better chordpainting feature.</p>
+          <p> Implementing tupplets.</p>
+          <p> Cleff to Midi with others not only G.</p>
+          <p> Developing a poliphony interface, not only chords, real poliphony.</p>
+           <p>More Garrapatea themes</p>
+          <p> Improving Midi Synth (Jassmid) for Firefox and Chrome.</p>
+         
+        </article>
+        </section>
+        </div><!-- /container -->
+
+
+
+    
+    
+      
+
+  
+
+      <div class="container">
+      <footer class="footer text-center">
+          <div class="container">
+        <section class="Bemoles row">
+        <article class="col-xs-12"> 
+          <h4>Try also Garrapatea with its reverse library Bemoles.JS</h4>
+         <a href="http://llucbrell.github.io/Bemoles/"> <p>Visit the reverse side of Garrapatea</p></a>
+        </article>
+        </section>
+      </div><!-- /container -->
+
+
+        <p class="text-center">&copy; MIT--> Lluc_Brell/Lucas_C/Hobbes--> 2015</p>
+      </footer>
+     
+
+   
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+    <!--Garrapatea libs-->
+
+    <script src="libs/vexflow-min.js"></script>
+<script src="libs/garrapatea/nuevocompas.js"></script>
+<script src="libs/garrapatea/nuevaclave.js"></script>
+<script src="libs/garrapatea/nuevoritmo.js"></script>
+<script src="libs/garrapatea/controlbotones.js"></script>
+<script src="libs/garrapatea/coordenadasratoncanvas.js"></script>
+<script src="libs/garrapatea/nuevanota2.js"></script>
+<script src="libs/garrapatea/nuevosilencio.js"></script>
+<script src="libs/garrapatea/nuevabarra.js"></script>
+<script src="libs/garrapatea/redibujacanvas.js"></script>
+<script src="libs/garrapatea/almacena.js"></script>
+<script src="libs/garrapatea/armadura.js"></script>
+
+
+<!--EXAMPLE GARRAPATEA SCRIPT-->
+<script type="text/javascript">
+
+//la mayor parte de esto lo controlará el bloguero
+//contador de compases/stave counter
+var numerocompas=0;
+var canvas_y;
+var canvas_x;
+//almacén de objetos (notas, claves, etc.,)
+var almacen=[];
+var contador=0;
+
+//control del tamaño del vex/vex stave size control
+var valinivexstave=-1;
+var valaltvexstave=20;
+var valfinvexstave=39;
+//var accion="notas";
+
+
+//control localización barras
+var valinivexbar=0;
+var valaltvexbar=20;
+var valfinvexbar=38;
+
+
+
+
+//compás inicial para una mejor experiéncia UI 
+//se puede mejorar, colocar todo en una función a parte
+
+nuevoCanvas();
+nuevoCanvas();
+nuevoCanvas();
+nuevoCanvas();
+nuevoCanvas();
+nuevoCanvas();
+nuevoCanvas();
+nuevoCanvas();
+nuevaClave("treble", "c0");
+nuevoRitmo("6/8", "c1");
+nuevaBarra("2","c0");
+nuevaNota( 105 , "c2");
+nuevaNota( 85 , "c4");
+
+
+
+
+
+
+
+
+console.log("jodeeee XD");
+
+$("#option1").on("click", function(){
+    options(1);
+    console.log("hola");
+});
+
+$("#option2").on("click", function(){
+    options(2);
+});
+
+$("#option3").on("click", function(){
+    options(3);
+});
+
+
+
+
+
+function options(number){
+//var opcion=document.querySelector('input[name="options"]:checked').value;
+var partitura=document.getElementById("fondo");
+console.log("otro");
+
+if(number===1){
+partitura.style.background="white";
+console.log("cocacola1");
+}
+
+if(number===2){
+partitura.style.background="#B5F36D";
+console.log("cocacola2");
+}
+
+if(number===3){
+partitura.style.background="#4188D2";
+console.log("cocacola3");
+}
+}
+  </script>
+
+
+  </body>
+</html>

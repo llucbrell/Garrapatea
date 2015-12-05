@@ -1,0 +1,320 @@
+ 
+
+ #garrapatea{
+      font-size: 200%;
+      padding: 2%;
+      color: #B5F36D;
+      
+    }
+
+#navbar{
+   background:url(../imagenes/logo.PNG) bottom 25% left 29% no-repeat;
+   background-size: 20%;   
+
+    
+}
+#htmlcode{
+    color:white;
+     background:url(../imagenes/img_sheet.jpg);
+    }
+
+ #htmlcode p{
+   color: white;
+      }
+    
+
+    article{
+      padding: 3%;
+    }
+    a{
+      color: #519600;
+    }
+.btn-success{
+
+}
+
+.clave{
+  margin-left: -2px;
+  margin-right: -2px;
+}
+.ritmo{
+  margin-left: -2px;
+  margin-right: -2px;
+  }
+
+.jumbotron{
+  background-color: #B5F36D;
+}
+
+#try{
+  background-color: #519600;
+}
+h4{
+  color:  #519600;
+}
+
+h3{
+  color:  #7CE700;
+}
+.jumbotron h2{
+  color:  white;
+}
+
+.jumbotron h1{
+  color:  white;
+ font-weight: 50%;
+}
+
+.jumbotron p{
+  color:  #71AD2B;
+}
+
+h1{
+  color:  #71AD2B;
+}
+
+h2{
+ color: #71AD2B;
+}
+
+div .sidebar{
+  font-size: 150%;
+  text-align: right;
+}
+
+div .methods h4{
+  color: #7CE700;
+}
+
+#fondo{
+   font-size: 18px;
+  padding: 3px;
+  -moz-border-radius:10%;-webkit-border-radius:10%;border-radius:10%;
+
+}
+#titulo{
+  color: black;
+}
+canvas {
+  position: relative;
+  display: inline-block;
+  padding: 0px;
+  margin-left: -2px;
+  }
+
+
+
+
+
+
+@media print {
+  
+    button{visibility: hidden;}       
+    header{visibility: hidden;}
+    footer{visibility: hidden;}
+    label{visibility: hidden;}
+    input{visibility: hidden;}
+    a{visibility: hidden;}
+
+  }
+
+
+
+
+
+
+/*buttons--------------------------------------------*/
+
+#redonda{
+   width: 20%;
+   background:url(../imagenes/whole_note.svg) bottom 15%right no-repeat;
+   background-size: 35%;   
+}
+
+#blanca{
+   width: 20%;
+   background:url(../imagenes/Half_Note.svg) center right no-repeat;
+   background-size: 50%;   
+}
+
+#negra{
+   width: 20%;
+   background:url(../imagenes/Quarter_note.svg) center right no-repeat;
+   background-size: 50%;   
+}
+
+#corchea{
+   width: 20%;
+   background:url(../imagenes/quaver.svg) center left 130% no-repeat;
+   background-size: 70%;   
+}
+
+#semicorchea{
+   width: 20%;
+   background:url(../imagenes/semicorchea.svg) center right 10% no-repeat;
+   background-size: 37%;   
+}
+
+#fusa{
+   width: 20%;
+   background:url(../imagenes/32nd_note.svg) center right 10% no-repeat;
+   background-size: 37%;   
+}
+
+#semifusa{
+   width: 20%;
+   background:url(../imagenes/64th_note.svg) center right 10% no-repeat;
+   background-size: 37%;   
+}
+
+#garrapim{
+   width: 20%;
+   background:url(../imagenes/garrapatea.svg) center right 10% no-repeat;
+   background-size: 30%;   
+}
+
+
+
+
+
+
+
+
+
+
+
+#becuadro{
+   width: 20%;
+   background:url(../imagenes/becuadro.svg) center right no-repeat;
+   background-size: 27%;   
+}
+
+#sharp{
+   width: 20%;
+   background:url(../imagenes/sharp.svg) center right no-repeat;
+   background-size: 27%;   
+}
+
+#flat{
+   width: 20%;
+   background:url(../imagenes/Flat.svg) center right  no-repeat;
+   background-size: 27%;   
+}
+
+#doublesharp{
+   width: 20%;
+   background:url(../imagenes/DoubleSharp.svg) center right no-repeat;
+   background-size: 27%;   
+}
+
+#doubleflat{
+   width: 20%;
+   background:url(../imagenes/DoubleFlat.svg) center right no-repeat;
+   background-size: 27%;   
+}
+
+
+
+
+
+
+
+
+
+#gclef{
+   width: 40%;
+   background:url(../imagenes/G-clef.svg) center right  no-repeat;
+   background-size: 37%;   
+}
+
+#fclef{
+   width: 40%;
+   background:url(../imagenes/FClef.svg) center right no-repeat;
+   background-size: 37%;   
+}
+
+#cclef{
+   width: 40%;
+   background:url(../imagenes/CClef.svg) center right no-repeat;
+   background-size: 37%;   
+}
+
+
+
+
+
+
+
+
+#time24{
+   width: 20%;
+   background:url(../imagenes/time23b.jpg) center right no-repeat;
+   background-size: 44%;   
+}
+
+#time44{
+   width: 20%;
+   background:url(../imagenes/time44b.png) center right no-repeat;
+   background-size: 37%;   
+}
+
+#time34{
+   width: 20%;
+   background:url(../imagenes/time34b.jpg) center right no-repeat;
+   background-size: 40%;   
+}
+
+
+#time68{
+   width: 20%;
+   background:url(../imagenes/time68b.png) center right 10% no-repeat;
+   background-size: 30%;   
+}
+
+#time98{
+   width: 20%;
+   background:url(../imagenes/time98b.png) center right no-repeat;
+   background-size: 30%;   
+}
+
+#time128{
+   width: 20%;
+   background:url(../imagenes/time128b.jpg) center right no-repeat;
+   background-size: 50%;   
+}
+
+
+
+
+
+
+
+#bnormal{
+   width: 30%;
+   background:url(../imagenes/bnormal.svg) center right  no-repeat;
+   background-size: 17%;   
+}
+
+#bdoble{
+   width: 30%;
+   background:url(../imagenes/bdoble.svg) center  left 1200% no-repeat;
+   background-size: 97%;   
+}
+
+#brepini{
+   width: 30%;
+   background:url(../imagenes/repinbar.png) center left 190% no-repeat;
+   background-size: 87%;   
+}
+
+#brepend{
+   width: 30%;
+   background:url(../imagenes/repeatbar.png) center right no-repeat;
+   background-size: 37%;   
+}
+
+#bend{
+   width: 30%;
+   background:url(../imagenes/endbar.png) center right no-repeat;
+   background-size: 57%;   
+}

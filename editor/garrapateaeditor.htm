@@ -1,0 +1,560 @@
+<!--Bemoles.. 
+Web construida con Bootstrap por economía en factor tiempo
+Web build with bootstrap for saving time.-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+
+
+    <title>Garrapatea Editor</title>
+
+    <!-- Bootstrap core CSS -->
+    <link  rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/jumbotron-narrow.css" type="text/css" rel="stylesheet">
+    <!--jquery and bootstrap usually place it in before the close
+    body tag
+
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    -->
+
+
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+  
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <link  rel="stylesheet" href="../css/garrapatea.css" type="text/css">
+
+   
+<script src="libs/vexflow-min.js"></script>
+<script src="libs/jquery.js"></script>
+<script src="libs/garrapatea/nuevocompas.js"></script>
+<script src="libs/garrapatea/nuevaclave.js"></script>
+<script src="libs/garrapatea/nuevoritmo.js"></script>
+<script src="libs/garrapatea/controlbotones.js"></script>
+<script src="libs/garrapatea/coordenadasratoncanvas.js"></script>
+<script src="libs/garrapatea/nuevanota.js"></script>
+<script src="libs/garrapatea/nuevosilencio.js"></script>
+<script src="libs/garrapatea/nuevabarra.js"></script>
+<script src="libs/garrapatea/redibujacanvas.js"></script>
+<script src="libs/garrapatea/almacena.js"></script>
+<script src="libs/garrapatea/armadura.js"></script>
+<script src="libs/garrapatea/imprimir.js"></script>
+<script src="libs/garrapatea/preview.js"></script>
+<!--note control interface for send to the correct livesound API-->
+<script src="libs/garrapatea/sonido.js"></script>
+<script src="libs/garrapatea/loadaudio.js"></script>
+<script src="libs/garrapatea/browsers.js"></script>
+<script src="libs/garrapatea/loadaudioie.js"></script>
+<!--Midi transaltion library control-->
+<script src="libs/MidiSketch.js"></script>
+<script src="libs/garrapatea/interfacemidi.js"></script>
+<!--Midi online reproduction library control-->
+<script src="libs/garrapatea/leemidi.js"></script>
+<script src="libs/garrapatea/synth.js"></script>
+<script src="libs/garrapatea/audio.js"></script>
+<script src="libs/garrapatea/replayer.js"></script>
+<script src="libs/garrapatea/playonflight.js"></script>
+
+
+
+
+
+
+
+<style type="text/css">
+/*
+*{
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+#partitura{
+  margin-left: 4px;
+}
+
+#c0{
+   margin-right: -2px;
+}
+
+
+#b0{
+  
+  margin-left: 35px;
+  margin-right: -2px;
+}
+
+*/
+
+.clave{
+  margin-left: -2px;
+  margin-right: -2px;
+}
+.ritmo{
+  margin-left: -2px;
+  margin-right: -2px;
+  }
+
+
+
+canvas {
+  position: relative;
+  display: inline-block;
+  padding: 0px;
+  margin-left: -2px;
+  }
+
+
+
+</style>
+
+
+
+  
+    
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header">
+        <header class="Gheader">
+          <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+         
+           <h3 id="garrapatea" class="text-muted text-left">Garrapatea.JS</h3>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          
+        </div>
+      </div>
+    
+
+
+
+
+<div class="btn-group pull-right">
+<button id="1" class="botones btn btn-default">+</button>
+<button id="2" class="botones btn btn-default">-</button>
+<button id="3" class="botones btn btn-default">Print</button>
+<button id="4" class="botones btn btn-default">PNG</button>
+<button id="5" class="botones btn btn-default">Midi</button>
+<button id="6" class="botones btn btn-default">Play</button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+    </nav>
+
+
+
+
+        </header>
+      
+</div>
+</div>
+     
+ <div class="container">
+
+
+<h2 contenteditable="true" id="titulo">Sheet tittle..</h2> 
+<div id="partitura">
+  <!--
+<canvas width="1" height="150" id="b0" class="barra"></canvas>podemos usar un sistema de barrado para formatear todo mejor -->
+
+
+
+</div>
+<div>
+
+
+
+<!--
+<div id="dibujo"><canvas width="200" height="220" id="d0" class="dibujable"></canvas>
+<canvas width="200" height="220" id="d1" class="dibujable"></canvas>
+</div><button id="clear">clear</button>
+-->
+
+<canvas id="preview"></canvas>
+<div id="visual"></div>
+
+
+
+
+
+
+
+
+
+ 
+</div>
+
+<div id="audio" style="visibility:hidden;"></div>
+<div id="miditexto"></canvas>
+</script>
+
+    
+    
+      
+
+  </div>
+
+     </div> <!-- /container -->
+    
+      
+
+
+<div class="container">
+  <div class="botonera row text-center"></div>
+<label>
+<input type="checkbox" name="sonido" id="sonido" checked="checked"> 
+sound
+</label>
+
+
+<label>
+  
+  <input type="checkbox" name="alteraciones" id="alteraciones"> 
+
+  Accidents
+
+</label>
+
+<label>
+<input type="checkbox" name="puntillo" id="puntillo"> 
+Dot
+</label>
+
+
+
+
+<div name="controles" class="btn-group">
+
+<label for="option1" class="btn btn-success">
+
+  <input type="radio"  name="radioButtons" id="option1" value="notas" checked="checked">
+
+  Notes
+  
+</label>
+
+<label for="option2" class="btn btn-primary">
+
+  <input type="radio"  name="radioButtons" id="option2" value="claves" >
+
+  Clef
+ 
+</label>
+  
+  <label for="option3" class="btn btn-warning">
+
+  <input type="radio"  name="radioButtons" id="option3" value="ritmos" >
+
+  Rhythm
+
+</label>
+
+<label for="option4" class="btn btn-success">
+
+  <input type="radio" name="radioButtons"  id="option4" value="silencios" >
+
+  Silences
+
+</label>
+
+<label for="option5" class="btn btn-info">
+
+  <input type="radio" name="radioButtons" id="option5" value="barra" >
+
+  Bars
+
+</label>
+
+<label class="btn btn-danger">
+  
+  <input type="radio" name="radioButtons" id="armadura" value="armadura"> 
+
+  Pitchs
+
+</label>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div id="desplegable" class="desplegable row">
+ <div class="botonera1  col-xs-12 col-sm-4"> 
+<div id="notasform" class="btn-group">
+<label class="radio2 btn btn-success" for="redonda" id="redonda">
+<input type="radio" name="notas" id="redonda" value="1">
+</label>
+<label class="radio2 btn btn-success" for="blanca" id="blanca">
+<input type="radio" name="notas" id="blanca" value="2" checked="checked"></label>
+<label class="radio2 btn btn-success" for="negra" id="negra">
+<input type="radio" name="notas" id="negra" value="4" >
+</label>
+<label class="radio2 btn btn-success" for="corchea" id="corchea">
+<input type="radio" name="notas" id="corchea" value="8" >
+</label>
+<label class="radio2 btn btn-success" for="semicorchea" id="semicorchea">
+<input type="radio" name="notas" id="semicorchea" value="16">
+</label>
+<label class="radio2 btn btn-success" for="fusa" id="fusa">
+<input type="radio" name="notas" id="fusa" value="32"></label>
+<label class="radio2 btn btn-success" for="semifusa" id="semifusa">
+<input type="radio" name="notas" id="semifusa" value="64" >
+</label>
+<label class="radio2 btn btn-success" for="garrapatea" id="garrapim">
+<input type="radio" name="notas" id="garrapatea" value="128">
+</label>
+</div>
+</div>
+
+ <div class="botonera2  col-xs-12 col-sm-4"> 
+<div id="accidentesform" class="btn-group">
+<label class="radio6 btn btn-danger" for="becuadro" id="becuadro">
+<input type="radio" name="accidentes" id="becuadro" value="n" checked="checked">
+</label>
+<label class="radio6 btn btn-danger" for="sostenido" id="sharp">
+<input type="radio" name="accidentes" id="sostenido" value="#">
+</label>
+<label class="radio6 btn btn-danger" for="bemol" id="flat">
+<input type="radio" name="accidentes" id="bemol" value="b">
+</label>
+<label class="radio6 btn btn-danger" for="dsostenido" id="doublesharp">
+<input type="radio" name="accidentes" id="dsostenido" value="##">
+</label>
+<label class="radio6 btn btn-danger" for="dbemol" id="doubleflat">
+<input type="radio" name="accidentes" id="dbemol" value="bb">
+</label>
+</div>
+</div>
+
+
+<div class="botonera3 col-xs-12 col-sm-4"> 
+<div id="clavesform" class="btn-group">
+<label class="radio4 btn btn-primary" for="clavesol" id="gclef">
+<input type="radio" name="claves" id="clavesol" value="treble" checked="checked">
+</label>
+<label class="radio4 btn btn-primary" for="clavefa" id="fclef">
+<input type="radio" name="claves" id="clavefa" value="bass">
+</label>
+<label class="radio4 btn btn-primary" for="clavedo" id="cclef">
+<input type="radio" name="claves" id="clavedo" value="alto">
+</label>
+</div>
+</div>
+
+
+</div>
+</div>
+
+<div class="container">
+<div class="desplegable2 row">
+
+<div class="botoneradesp2 col-xs-12 col-sm-7">
+<div id="ritmosform" class="btn-group">
+<label class="radio3 btn btn-warning" for="2/4" id="time24">
+<input type="radio" name="ritmos" id="2/4" value="2/4">
+</label>
+<label class="radio3 btn btn-warning" for="3/4" id="time34">
+ <input type="radio" name="ritmos" id="3/4" value="3/4" checked="checked">
+</label>
+<label class="radio3 btn btn-warning" for="4/4" id="time44">
+ <input type="radio" name="ritmos" id="4/4" value="4/4">
+</label>
+<label class="radio3 btn btn-warning" for="6/8" id="time68">
+ <input type="radio" name="ritmos" id="6/8" value="6/8">
+</label>
+<label class="radio3 btn btn-warning" for="9/8" id="time98">
+ <input type="radio" name="ritmos" id="9/8" value="9/8">
+</label>
+<label class="radio3 btn btn-warning" for="12/8" id="time128">
+ <input type="radio" name="ritmos" id="12/8" value="12/8">
+</label>
+</div>
+</div>
+
+<div class="botoneradesp2 col-xs-12 col-sm-5">
+<div id="barrasform" class="btn-group">
+<label class="radio5 btn btn-info" for="barranormal" id="bnormal">
+<input type="radio" name="barras" id="barranormal" value="barranormal" checked="checked">
+</label>
+<label class="radio5 btn btn-info" for="barradoble" id="bdoble">
+ <input type="radio" name="barras" id="barradoble" value="barradoble">
+</label>
+<label class="radio5 btn btn-info" for="barrafinal" id="brepini">
+ <input type="radio" name="barras" id="barrafinal" value="barrafinal">
+</label>
+<label class="radio5 btn btn-info" for="barrarepeticionprin" id="brepend">
+ <input type="radio" name="barras" id="barrarepeticionprin" value="barrarepeticionprin">
+</label>
+<label class="radio5 btn btn-info" for="barrarepeticionend" id="bend">
+ <input type="radio" name="barras" id="barrarepeticionend" value="barrarepeticionend">
+</label>
+</div>
+</div>
+</div>
+
+
+</div>
+</div>
+</div>
+
+<footer class="footer text-center">
+
+          <div class="container">
+        <section class="Bemoles row">
+        <article class="col-xs-12"> 
+          <h4 class="text-center">Try also Garrapatea with its reverse library Bemoles.JS</h4>
+         <a href="#"> <p class="text-center">Visit the reverse side of Garrapatea</p></a>
+        </article>
+        </section>
+      </div><!-- /container -->
+
+
+        <p class="text-center">&copy; MIT--> Lluc_Brell/Lucas_C/Hobbes --> 2015</p>
+      </footer>
+     
+
+   
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+    <!--Garrapatea libs-->
+<script type="text/javascript">
+
+//la mayor parte de esto lo controlará el bloguero
+//contador de compases/stave counter
+var numerocompas=0;
+var canvas_y;
+var canvas_x;
+//almacén de objetos (notas, claves, etc.,)
+var almacen=[];
+var contador=0;
+var arraymp3s=[];
+
+//control del tamaño del vex/vex stave size control
+var valinivexstave=-1;
+var valaltvexstave=20;
+var valfinvexstave=39;
+//var accion="notas";
+var jasmid;
+
+//control localización barras
+var valinivexbar=0;
+var valaltvexbar=20;
+var valfinvexbar=38;
+//for audio playing
+var context;
+var livesound;
+
+//for midi file writting
+var midisketch= new MidiObject();
+var track= new MidiTrack();
+
+
+//compás inicial para una mejor experiéncia UI 
+//se puede mejorar, colocar todo en una función a parte
+
+nuevoCanvas();
+nuevoCanvas();
+nuevoCanvas();
+nuevoCanvas();
+nuevoCanvas();
+nuevoCanvas();
+nuevoCanvas();
+nuevoCanvas();
+nuevoCanvas();
+nuevoCanvas();
+nuevoCanvas();
+nuevoCanvas();
+nuevoCanvas();
+nuevoCanvas();
+nuevoCanvas();
+nuevoCanvas();
+nuevaClave("treble", "c0");
+nuevoRitmo("6/8", "c1");
+nuevaBarra("2","c0")
+//usamos esta función para cargar el audio
+//loadAudio();
+
+
+//ONCLICK LISTENERS
+
+$("#1").on("click", function(){
+    nuevoCanvas();
+});
+
+$("#2").on("click", function(){
+    borraCanvasDom();
+});
+
+$("#3").on("click", function(){
+    imprimirPartitura();
+});
+
+$("#4").on("click", function(){
+    muestraImagenPartitura();
+});
+
+$("#5").on("click", function(){
+    aMidi(almacen);
+    aFile(midisketch);
+});
+
+
+$("#6").on("click", function(){
+    aMidi(almacen);
+    aReproducir(midisketch);      
+});
+
+window.addEventListener('load', browserCatch, false);
+
+//audioSupport
+
+
+
+
+
+  </script>
+
+  </body>
+</html>

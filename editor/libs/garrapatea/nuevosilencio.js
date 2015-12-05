@@ -4,6 +4,7 @@ function nuevoSilencio(compasid){
 var figura;
 var direccionplica= 1;   
 var nota="b/4";
+var dotchecked;
 //selección del compás
 
 var canvas = document.getElementById(compasid);
@@ -18,17 +19,23 @@ var stavesel = new Vex.Flow.Stave(valinivexstave,valaltvexstave, valfinvexstave)
 
 figura=document.querySelector('input[name="notas"]:checked').value;
 
-
+//checkeador de puntillos
+dotchecked=document.getElementById("puntillo").checked;
 
 
 //obtenemos el nombre de la nota
 dibujaSilencio(figura);
 
 
-//creamos y almacenamos el objeto
-var Obsilencio={nombre:"silencio", keys:nota, duration:figura, stem_direction:direccionplica, type:"r"};
+//creamos y almacenamos el objeto si tiene puntillo o si no...
+if(dotchecked===true){
+  var Obsilencio={nombre:"silencio", keys:nota, duration:figura, stem_direction:direccionplica, type:"r", dot:1};
 almacena(Obsilencio, compasid);
-
+}
+else{
+var Obsilencio={nombre:"silencio", keys:nota, duration:figura, stem_direction:direccionplica, type:"r", dot:0};
+almacena(Obsilencio, compasid);
+}
 
 
  
@@ -37,10 +44,12 @@ almacena(Obsilencio, compasid);
 
 function dibujaSilencio(figura){
 
-
+if(dotchecked===true){
+var notes = [  new Vex.Flow.StaveNote({ keys: [nota], stem_direction: direccionplica, duration: figura,  type: "r" }).addDotToAll(),];
+}
+else{
 var notes = [  new Vex.Flow.StaveNote({ keys: [nota], stem_direction: direccionplica, duration: figura,  type: "r" }),];
-
-
+}
 
 // Create a voice in 4/4 AQUÍ INTRODUCIMOS LA FUNCION DEL COMPAS..
 

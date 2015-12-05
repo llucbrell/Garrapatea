@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Garrapatea Docs</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/dashboard.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+     <link  rel="stylesheet" href="css/garrapatea.css" type="text/css">
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a id="garrapatea"class="navbar-brand" href="index.htm">Garrapatea</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="index.htm">Home</a></li>
+            <li><a href="editor/garrapateaeditor.htm">Write</a></li>
+            <li><a href="https://github.com/llucbrell/Garrapatea">GitHub</a></li>
+           
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Mark Function...">
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+            <li><a href="#files">File System</a></li>
+            <li><a href="#methods">Methods</a></li>
+            <li><a href="#estilos">CSS</a></li>
+            <li><a href="#licenses">Licenses</a></li>
+          </ul><!--
+          <ul class="nav nav-sidebar">
+            <li><a href="">Nav item</a></li>
+            <li><a href="">Nav item again</a></li>
+            <li><a href="">One more nav</a></li>
+            <li><a href="">Another nav item</a></li>
+            <li><a href="">More navigation</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="">Nav item again</a></li>
+            <li><a href="">One more nav</a></li>
+            <li><a href="">Another nav item</a></li>
+          </ul>-->
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 name="Overview" class="page-header text-center">Garrapatea Library Documentation</h1>
+
+          <div class="row placeholders"><!-- labels-->
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Label</h4>
+              <span class="text-muted">Something else</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Label</h4>
+              <span class="text-muted">Something else</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Label</h4>
+              <span class="text-muted">Something else</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Label</h4>
+              <span class="text-muted">Something else</span>
+            </div>
+          </div><!-- labels-->
+
+          <div>
+          <h2 id="files" class="sub-header">File System</h2>
+          <p> The file system is tow directories, one for the audio online sound and other for the javascript files.</p>
+
+          </div>
+
+            <div>
+<h3 class="sub-header">Garrapatea DIRECTORY</h3>
+<p>Garrapatea library it's build uppon some JavaScript files. Look at the table.</p>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Works On</th>
+                  <th>&</th>
+                  <th>Methods</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>almacena</td>
+                  <td>Store note objects in arrray almacen</td>
+                  <td>overrite array</td>
+                  <td>almacena(); overrriteAlmacen();</td>
+                  
+                </tr>
+                <tr>
+                  <td>armadura</td>
+                  <td>Control the key signature feature</td>
+                  <td>store it in the array almacen</td>
+                  <td>nuevaArmadura(); testArmadura(); almacenaTonalidad(); dibujaArmadura();</td>
+                  
+                </tr>
+                <tr>
+                  <td>browsers</td>
+                  <td>Browser compatibility bypass</td>
+                  <td>for audio API and other features</td>
+                  <td>browserCatch(); tryAPIsound(); 
+                    tryHTMLsound();  tryJasmid()</td>
+                  
+                </tr>
+                <tr>
+                  <td>controlbotones</td>
+                  <td>Pressed button controller</td>
+                  <td>get pixel control from "partitura" canvas</td>
+                  <td>clickeoEnCanvas();
+                    ObtenPixelColor ();
+                    repartoAcciones();</td>
+                 
+                </tr>
+                <tr>
+                  <td>coordenadasratoncanvas</td>
+                  <td>mouse coordinates over canvas</td>
+                  <td></td>
+                  <td>coordenadasRatonCanvas();</td>
+                  
+                </tr>
+                <tr>
+                  <td>imprimir</td>
+                  <td>print easy function</td>
+                  <td></td>
+                  <td>imprimirPartitura();</td>
+                  
+                </tr>
+                <tr>
+                  <td>interfacemidi</td>
+                  <td>midi file creator</td>
+                  <td></td>
+                  <td>aMidi(); 
+                    midiNota();
+                    midiSilencio();
+                    midiArray();
+                    polifonia();
+                    aFile()</td>
+                 
+                </tr>
+                <tr>
+                  <td>loadaudio</td>
+                  <td>load feedback audio files for audioAPI</td>
+                  <td></td>
+                  <td>loadAudio();
+                    loadNote();
+                    ejecutaNota();</td>
+                  
+                </tr>
+                <tr>
+                  <td>loadaudioie</td>
+                  <td>load feedback audio for HTML5 auido</td>
+                  <td></td>
+                  <td>bypassAudio();
+                    loadHTMLnote();
+                    ejecutaNotaHTML();</td>
+                 
+                </tr>
+                <tr>
+                  <td>nuevabarra</td>
+                  <td>compass bar controller</td>
+                  <td>draw bars on compass</td>
+                  <td>nuevaBarra();</td>
+                  
+                </tr>
+                <tr>
+                  <td>nuevaclave</td>
+                  <td>cleff paint controller</td>
+                  <td></td>
+                  <td>nuevaClave();</td>
+                  
+                </tr>
+                <tr>
+                  <td>nuevanota</td>
+                  <td>paint notes controller</td>
+                  <td>create object notes "Obnota"</td>
+                  <td>nuevaNota();
+                    createObnota();
+                    dibujaGrupoNotas();
+                    alturaNota();
+                    dibujaNota();
+                    dibujaNotaAlterada();
+                  </td>
+                 
+                </tr>
+                <tr>
+                  <td>nuevocompas</td>
+                  <td>paint the staves sheet</td>
+                  <td>innsert canvas for painting</td>
+                  <td>nuevoCompas();
+                    nuevoCanvas();</td>
+                  
+                </tr>
+                <tr>
+                  <td>nuevoritmo</td>
+                  <td>draw the rythm</td>
+                  <td>2/4, 3/4, 4/4</td>
+                  <td>nuevoRitmo();</td>
+                  
+                </tr>
+                <tr>
+                  <td>nuevosilencio</td>
+                  <td>silence draw controller</td>
+                   <td></td>
+                  <td>nuevoSilencio();
+                    aJasmid();
+                    aBgSound();</td>
+                 
+                  
+                </tr>
+                <tr>
+                  <td>playonflight</td>
+                  <td>jasmid interface player</td>
+                   <td></td>
+                  <td>aReproducir();
+                    dibujaSilencio();</td>
+                </tr>
+                <tr>
+                  <td>preview</td>
+                  <td>png image creator</td>
+                  <td>oppen in new tab</td>
+                  <td>muestraImagenPartitura();</td>
+                  
+                </tr>
+                  <tr>
+                  <td>redibujacanvas</td>
+                  <td>delete objects controller</td>
+                  <td>redraw canvas control</td>
+                  <td>redibujaCanvas();
+                    borraCanvasAndRedibuja();
+                    borraCanvasDom();</td>
+                  
+                </tr>
+                 <tr>
+                  <td>sonido</td>
+                  <td>play feedback notes</td>
+                  <td>translate to midi note number</td>
+                  <td>playNote();
+                    getMidiNoteNumber();
+                  </td>
+                  
+                </tr>
+              </tbody>
+            </table>
+      
+
+
+        </div>
+
+       </div>
+
+       <div>
+             <h3 class="sub-header">Sonidosmin DIRECTORY</h3>
+             <p>Used piano mp3 for a online sound feedback. You can change the files in this directory for your own files, like some guitar but remember to use the same name and format.</p>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Format</th>
+                  <th>Key</th>
+                  <th>Midi number</th>
+                 
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>48</td>
+                  <td>mp3</td>
+                  <td>C/4</td>
+                 <td>48</td>
+                                    
+                </tr>
+                <tr>
+                  <td>49</td>
+                  <td>mp3</td>
+                  <td>C#/4</td>
+                 <td>49</td>
+                                    
+                </tr>
+                <tr>
+                  <td>50</td>
+                  <td>mp3</td>
+                  <td>D/4</td>
+                 <td>50</td>
+                                   
+                </tr>
+                <tr>
+                  <td>51</td>
+                  <td>mp3</td>
+                  <td>D#/4</td>
+                <td>51</td>
+                                   
+                </tr>
+                <tr>
+                  <td>52</td>
+                  <td>mp3</td>
+                  <td>E/4</td>
+                  <td>52</td>
+                                   
+                </tr>
+                <tr>
+                  <td>53</td>
+                  <td>mp3</td>
+                  <td>F/4</td>
+                  <td>53</td>
+                                   
+                </tr>
+                <tr>
+                  <td>54</td>
+                  <td>mp3</td>
+                  <td>F#/4</td>
+                   <td>54</td>
+                                    
+                </tr>
+                <tr>
+                  <td>55</td>
+                  <td>mp3</td>
+                  <td>G/4</td>
+                  <td>55</td>
+                                   
+                </tr>
+                <tr>
+                  <td>56</td>
+                  <td>mp3</td>
+                  <td>G#/4</td>
+                  <td>56</td>
+                                   
+                </tr>
+                <tr>
+                  <td>57</td>
+                  <td>mp3</td>
+                  <td>A/4</td>
+                  <td>57</td>
+                                   
+                </tr>
+                <tr>
+                  <td>58</td>
+                  <td>mp3</td>
+                  <td>A#/4</td>
+                  <td>58</td>
+                                   
+                </tr>
+                <tr>
+                  <td>59</td>
+                  <td>mp3</td>
+                  <td>B/4</td>
+                  <td>59</td>
+                                  
+                </tr>
+                <tr>
+                  <td>60</td>
+                  <td>mp3</td>
+                  <td>C/5</td>
+                   <td>60</td>
+                                   
+                </tr>
+                <tr>
+                  <td>61</td>
+                  <td>mp3</td>
+                  <td>C#/5</td>
+                  <td>61</td>
+                                   
+                </tr>
+                <tr>
+                  <td>62</td>
+                  <td>mp3</td>
+                  <td>D/5</td>
+                  <td>62</td>
+                                   
+                </tr>
+                <tr>
+                  <td>63</td>
+                  <td>mp3</td>
+                  <td>D#/5</td>
+                  <td>63</td>
+                                  
+                </tr>
+                <tr>
+                  <td>64</td>
+                  <td>mp3</td>
+                  <td>E/5</td>
+                 <td>64</td>
+                                   
+                </tr>
+                <tr>
+                  <td>65</td>
+                  <td>mp3</td>
+                  <td>E/5</td>
+                  <td>65</td>
+                                   
+                </tr>
+                <tr>
+                  <td>66</td>
+                  <td>mp3</td>
+                  <td>F/5</td>
+                  <td>66</td>
+                                        
+                </tr>
+                <tr>
+                  <td>67</td>
+                  <td>mp3</td>
+                  <td>F#/5</td>
+                   <td>67</td>
+                                         
+                </tr>
+                <tr>
+                  <td>68</td>
+                  <td>mp3</td>
+                  <td>G/5</td>
+                  <td>68</td>
+                                         
+                </tr>
+                <tr>
+                  <td>69</td>
+                  <td>mp3</td>
+                  <td>G#/5</td>
+                  <td>69</td>
+                                        
+                </tr>
+                <tr>
+                  <td>70</td>
+                  <td>mp3</td>
+                  <td>A/5</td>
+                  <td>70</td>
+                                          
+                </tr>
+                <tr>
+                  <td>71</td>
+                  <td>mp3</td>
+                  <td>A#/5</td>
+                  <td>71</td>
+                                         
+                </tr>
+                <tr>
+                  <td>72</td>
+                  <td>mp3</td>
+                  <td>B/5</td>
+                  <td>72</td>
+                                          
+                </tr>
+                <tr>
+                  <td>73</td>
+                  <td>mp3</td>
+                  <td> C/6  </td>   
+                  <td>73</td>
+                                         
+                </tr>
+                <tr>
+                  <td>74</td>
+                  <td>mp3</td>
+                  <td>  C#/6   </td>
+                  <td>74</td>
+                                         
+                </tr>
+                <tr>
+                  <td>75</td>
+                  <td>mp3</td>
+                  <td>   D/6   </td>
+                  <td>75</td>           
+                </tr>
+                <tr>
+                  <td>76</td>
+                  <td>mp3</td>
+                  <td>   D#/6   </td>
+                  <td>76</td>
+                                               
+                </tr>
+                <tr>
+                  <td>77</td>
+                  <td>mp3</td>
+                  <td>    E/6  </td>
+                 <td>77</td>
+                                                
+                </tr>
+                <tr>
+                  <td>78</td>
+                  <td>mp3</td>
+                  <td>  F/6    </td>
+                  <td>78</td>
+                                                
+                </tr>
+                <tr>
+                  <td>79</td>
+                  <td>mp3</td>
+                  <td>  F#/6    </td>
+                 <td>79</td>
+                                                
+                </tr><tr>
+                  <td>80</td>
+                  <td>mp3</td>
+                  <td>  G/6 </td>
+                  <td>80</td>
+                                               
+                </tr>
+                <tr>
+                  <td>81</td>
+                  <td>mp3</td>
+                  <td>  G#/6 </td>
+                  <td>81</td>
+                                                 
+                </tr>
+                <tr>
+                  <td>82</td>
+                  <td>mp3</td>
+                  <td>A/6</td>
+                  <td>82</td>
+                                                
+                </tr>
+                <tr>
+                  <td>83</td>
+                  <td>mp3</td>
+                  <td>  A#/6  </td>
+                 
+                  <td>83</td>              
+                </tr>
+                <tr>
+                  <td>84</td>
+                  <td>mp3</td>
+                  <td>B/6</td>
+                  <td>84</td>
+                                               
+                </tr>
+                <tr>
+                  <td>85</td>
+                  <td>mp3</td>
+                  <td>C/7</td>
+                  <td>85</td>
+                                                
+                </tr>
+                <tr>
+                  <td>86</td>
+                  <td>mp3</td>
+                  <td>C#/7</td>
+                   <td>86</td>
+                                             
+                </tr>
+                <tr>
+                  <td>87</td>
+                  <td>mp3</td>
+                  <td>D/7</td>
+                 <td>87</td>
+                                              
+                </tr>
+                <tr>
+                  <td>88</td>
+                  <td>mp3</td>
+                  <td>D#/7</td>
+                 <td>88</td>
+                                              
+                </tr>
+                <tr>
+                  <td>89</td>
+                  <td>mp3</td>
+                  <td>E/7</td>
+                  <td>89</td>
+                                              
+                </tr><tr>
+                  <td>90</td>
+                  <td>mp3</td>
+                  <td>E#/7</td>
+                  <td>90</td>
+                                              
+                </tr>
+               
+              </tbody>
+            </table>
+      
+        </div>
+      </div>
+
+
+
+<div class="methods">
+            <h2 id="methods" class="sub-header">Functions Review</h2>
+
+            <p>Garrapateahas its divided in three parts.</p>
+            <ul>
+            <li> The canvas "partitura"- formed by a growing number of 38 pixels canvas. </li>
+            <li>The array "almacen"- stores the objects and the position on the canvas "partitura".</li>
+            <li>The buttons or controllers- for creating objects.</li>
+            </ul>
+
+          <p>We have several methods that intercat between this parts.</p>
+
+            <h4>almacena (objet, canvasStaveId)</h4>
+            <p>This method is used for save an object and the position into the canvas. Recieve a musical object like a note, cleff, rythm or bar and the respective position into the canvas "partitura".</p>
+
+            <h4>overriteAlmacen (objet, canvasStaveId)</h4>
+            <p>Substite an object with another object.</p>
+
+
+            <h4>nuevaArmadura (counter, canvasStaveId)</h4>
+            <p>Creates a newer key signature. Recieve a counter, for control the number of clicks on the canvas and the canvasId for a correct saving on "almacen". </p>
+
+            <h4>testArmadura (note, keySignature)</h4>
+            <p>Checks if one note is sharped or flatted for the effect of some key signature. </p>
+
+             <h4>almacenaTonalidad (key, canvasStaveId)</h4>
+            <p>Save the key signature in the array.</p>
+
+            <h4>dibujaArmadura (key, canvasStaveId, a)</h4>
+            <p>Control the key signature drawing on the canvas. The "a" object is a variable passed to this function for a better control the drawing. If exist paint on two canvas.</p>
+
+            <h4>browserCatch ()</h4>
+            <p>Function for control the browsers differences.</p>
+
+
+            <h4>trySound ()</h4>
+            <p>Test if the browser support the different APIs supported by Garrapatea Sound</p>
+
+
+            <h4>tryAPIsound ()</h4>
+            <p>Function created for trySound(). Test only if the APIsound is supported in the user's browser.</p>
+
+
+            <h4>tryHTMLsound ()</h4>
+            <p>Function created for trySound(). Test only if the HTML audio tag si supported by the user's browser. It's called only if the previous function(tryAPIsound) is false.</p>
+            
+            <h4>tryJasmid ()</h4>
+            <p>Return true or false if the browser supports or not the jasmid library.</p>
+
+           <h4>clickeoEnCanvas (event, canvasStaveId)</h4>
+           <p>Function that works as a dynamic onclick listener. Get the context of the canvas.</p>
+
+           <h4>obtenPixelColor (canvas_x, canvas_y, contexToPixel, canvasStaveId)</h4>
+            <p>Tell us if the user click on the object. Objects in canvas are allways black in Garrapatea. If- it's black, call redibujaCanvas(), to redraw the canvas. Else- call repartoAcciones().</p>   
+
+            <h4>repartoAcciones (canvas_x, canvas_y, canvasStaveId)</h4>
+            <p>Check the controlls and decide what acction is going to do.</p>   
+
+            <h4>coordenadasRatonCanvas (event, canvasStavedId)</h4>
+            <p>Return the coordinates over the clicked canvas. X, Y and canvasStaveId.</p>       
+           
+
+           <h4>imprimirPartitura ()</h4>
+           <p>Print with the javascript print() function.</p>
+
+           <h4>aMidi (arrayAlmacen)</h4>
+           <p>Run over the array "almacen" and translate objects calling to the apropiate midiMessage function.</p>
+
+           <h4>midiNota (objet)</h4>
+           <p>translate teh objct Obnota, a note stored in the array, to the correct midiMessage and add it to the Miditrack. Use a series of calls to the <b>MidiSketch</b> library. </p>
+
+           <h4>midiSilencio (objet)</h4>
+           <p>The same as midiNota() but with silence objects.</p>
+
+           <h4>midiArray (objetArray)</h4>
+           <p>Called by aMidi() if the there are more than one object in the same canvas. </p>
+
+           <h4>polifonia (notesMidi)</h4>
+           <p>Used for create simple chords when midiArray call it.</p>
+           
+           <h4>aFile ()</h4>
+           <p>Creates a blob and put inside the binary midi file, then call the native downloadad function for each browser.</p>
+
+           <h4>loadAudio (directory)</h4>
+           <p>Loads audio from sonidosmin DIRECETORY if you doesn't pass a path to a new directory. Load the audio only for webAudioAPI.</p>
+
+           <h4>loadNote (pitch, url)</h4>
+           <p>Called by previous function, loads every mp3 file to the buffer. Uses https request.</p>
+
+           <h4>ejecutaNota (number)</h4>
+           <p>Play the note from the buffer when recieve a Number (name) of the file</p>
+
+           <h4>bypassAudio (directory)</h4>
+           <p>Called when the Web Audio API is not supported and loads audio files from directory.</p>
+
+           <h4>loadHTMLnote (pitch, url)</h4>
+           <p>Do the same as loadNote but with HTML audio API.</p>
+
+           <h4>ejecutaNotaHTML(number)</h4>
+           <p>Do the same as ejecutaNota but with HTML audio API.</p>
+
+           <h4>nuevaBarra (canvas_x, canvasStaveId)</h4>
+           <p>Creates, stores and paints the bars for the staves.</p>
+
+           <h4>nuevaClave (kind, canvasStaveID)</h4>
+           <p>Creates, stores and paints the cleff on the canvas.</p>
+        
+
+            <h4>nuevaNota (canvas_y, canvasStaveId)</h4>
+            <p>controls the new note creation. Check what note controlers the user has clicked and call the apropiate function.</p>
+
+            <h4>createObNota ()</h4>
+            <p>called by nuevaNota(), this function return a new note object.</p>
+           
+           <h4>dibujaGrupoNotas (startnotegroup, endnotegroup, notesarray, notesdurationarray, notesaccidentalarray, arraydots)</h4>
+           <p>Function for correct drawing beam notes. Recieve groups of arrays for localize and paint over the canvas. </p>
+            
+           <h4>alturaNota (canvas_y)</h4> 
+           <p>Recieve the Y clicked coordinate over the canvas, and return the name of the note to nuevaNota().</p>
+
+           <h4>dibujaNota (note, duration)</h4>
+           <p>Draw a simply note, with no neighbours.</p>
+
+           <h4>dibujaNotaAlterada (note, duration, accidental)</h4>
+           <p>Draw the simply note and the accident selected by the user.</p>
+
+           <h4>nuevoCanvas ()</h4>
+           <p>Introduce a new canvas on the DOM of the HTML.</p>
+
+           <h4>nuevoCompas (canvasId)</h4>
+           <p>Draw the 5 lines of the stave on the canvas.</p>
+
+           <h4>nuevoRitmo (rythmnumber, canvasStaveId)</h4>
+           <p>Draw a new Rythm 2/4, 3/4, etc., on the stave.</p>
+
+           <h4>nuevoSilencio (canvasStaveId)</h4>
+           <p>Control the creation of a new Silence.</p>
+
+           <h4>dibujaSilencio (duration)</h4>
+           <p>Draw the correct silence. This function is called by the nuevoSilencio function.</p>
+
+           <h4>aReproducir (SketchObject)</h4>
+           <p>This function recieve a MidiSketch object. This object, created by the MidiSketch library and interactuate with this fuction as a bypass. It calls the native midi support for each browser. </p>
+
+           <h4>aJasmid ()</h4>
+           <p>The online call to play jasmid for opera, chrome and firefox.</p>
+
+           <h4>aBgSound ()</h4>
+           <p>Internet Explorer midi support.</p>
+
+           <h4>muestraImagenPartitura ()</h4>
+           <p>Controlls the creation of a PNG image frome the canvas objects.</p>
+
+           <h4>redibujaCanvas (canvasStaveId, pixelcontext)</h4>
+           <p>Redraw the canvas if the pixel is black. It works with colaboration of nuevoCompas().</p>
+
+           <h4>borraCanvasAndRedibuja (canvasStaveId)</h4>
+           <p>Make the same as redibujaCanvas() but without call other function.</p>
+
+           <h4>borraCanvasDom ()</h4>
+           <p>Delte the last canvas from the DOM tree.</p>
+
+           <h4>playNOte (ObNote, soundCkecked)</h4>
+           <p>Call to get the midi note number, check the sound browser support and call the correct function for playing the feedback mp3 sounds.</p>
+
+           <h4>getMidiNoteNumber (Obnota)</h4>
+           <p>Recieve the Obnote object and return the correct midi note number.</p>
+</div>
+         <div>
+          <h2 id="estilos" class="sub-header">CSS Selectors</h2>
+          <p>Garrapatea uses a serie of css selectors to help to change the style.</p>
+
+          <h4>class="botones"</h4>
+          <p>For normal buttons. +, -, PNG, toMidiButton, play, etc,.</p>
+
+          <h4>class="radio"</h4>
+          <p>For radio buttons. The rest of user control buttons. Use the class and one number to make button groups.</p>
+
+          <h4>id="partitura"</h4>
+          <p>Its the place where is located the canvas where garrapatea draws the stave. Its a div.</p>
+
+          <h4>id="fondo"</h4>
+          <p>This CSS selector its a container div for all garrapatea APP.</p>
+          
+          <h4>id="audio"</h4>
+          <p>A hidden div where we store the HTML audio tags when the Web Audio API it's not supported</p>
+
+         
+
+
+
+</div>
+           <div>
+            <h2 id="licenses" class="sub-header">Licenses</h2>
+         <p>             
+<h3>Jasmid License</h3><p> 
+Copyright (c) 2010, Matt Westcott & Ben Firshman</p>
+<p> All rights reserved.</p>
+ 
+<p> Redistribution and use in source and binary forms, with or without 
+modification, are permitted provided that the following conditions are met:</p>
+ 
+ * Redistributions of source code must retain the above copyright notice, this 
+   list of conditions and the following disclaimer.
+ * Redistributions in binary form must reproduce the above copyright notice, 
+   this list of conditions and the following disclaimer in the documentation 
+   and/or other materials provided with the distribution.
+ * The names of its contributors may not be used to endorse or promote products 
+   derived from this software without specific prior written permission.
+ 
+<p> THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE 
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR 
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES 
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; 
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON 
+ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT 
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS 
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
+     
+
+     <h3>Vex-Flow License</h3><p>
+Vex Flow - A JavaScript library for rendering music notation.
+Copyright (c) 2010 Mohit Muthanna Cheppudira</p>
+<p>
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+<p>
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+<p>
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.</p>
+
+
+
+
+
+
+          <h3>
+MidiSketch License
+          </h3><p>
+Copiright (C) 2015 by Lucas Cerveró Beltrán_LLuc Brell_Hobbes
+</p> <p>
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+</p><p>
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+</p><p>
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+</p>
+
+  
+          <h3>
+Garrapatea License
+          </h3><p>
+Copiright (C) 2015 by Lucas Cerveró Beltrán_LLuc Brell_Hobbes
+</p> <p>
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+</p><p>
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+</p><p>
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+</p>
+       </div>
+
+
+
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="../../assets/js/vendor/holder.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+<script type="text/javascript">
+
+    $(".form-control").on("keydown", function () {
+    var v = $(this).val();
+    $(".lead").removeClass("lead");
+    var re = new RegExp("\\b" + v + "\\b","g");
+   /* $("p").each(function () {
+        if (v != "" && $(this).text().search(re) != -1) {
+            $(this).addClass("lead");
+        }
+    });
+*/
+    $("h4").each(function () {
+        if (v != "" && $(this).text().search(re) != -1) {
+            //$(this).addClass("lead");
+            $(this).css("color", "blue");
+
+        }
+    });
+
+});
+
+  </script>  
+  </body>
+</html>

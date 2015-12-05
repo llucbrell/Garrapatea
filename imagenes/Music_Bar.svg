@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg x="0" y="0" width="10" height="60" version="1.0" xmlns="http://www.w3.org/2000/svg">
+<g id="staff" fill="#000000">
+<rect x="0" y="16" width="12" height="1"/>
+<rect x="0" y="22" width="12" height="1"/>
+<rect x="0" y="28" width="12" height="1"/>
+<rect x="0" y="34" width="12" height="1"/>
+<rect x="0" y="40" width="12" height="1"/>
+</g>
+<rect id="barline" x="5" y="16" width="1" height="24" fill="#000000"/>
+</svg>

@@ -52,6 +52,44 @@ else{
 
 }
 
+function testArmadura(nota, armadura){
+  var tonalidades=["G","D","A","E","B","F#","C#","F","Bb","Eb","Ab","Db","Gb","Cb"];
+   var bemoles=["b","e","a","d","g","c","f"];
+   var sostenidos=["f","c","g","d","a","e","b"];
+  var boleano;
+   var tonali;
+   var contador;
+
+   for(var z=0; z<tonalidades.length; z++){
+     if(armadura.tonalidad===tonalidades[z]){
+      tonali=tonalidades[z];
+      contador=z;
+      break;
+     }
+  }
+  console.log("contador"+ contador);
+  if(contador>6){
+    
+    for(var p=0; p<contador-6; p++){
+      console.log(p+nota);
+      if(nota[0]===bemoles[p]){
+        boleano= "b";
+      }
+      console.log("alterados"+bemoles[contador]);
+        }
+  }
+  else{
+    for(var l=0; l<contador+1; l++){
+       console.log("#"+l+nota);
+      if(nota[0]===sostenidos[l]){
+        boleano= "#";
+      }
+
+       }
+    }
+  return boleano;
+}
+
 
 function almacenaTonalidad(tonalidad, compasid){
 //alert("hola"+alteracionesChecked);
